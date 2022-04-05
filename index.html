@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Style Guide Generator</title>
+   <meta name="viewport" content="width=device-width,initial-scale=1" >
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link href="override.css" rel="stylesheet">
+</head>
+
+<body class="container-fluid">
+    <header class="container-fluid">
+        <div id="hero" class="carousel slide" data-bs-ride="carousel">   
+            <div id="hero-slides" class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <h1>Generate a custom style guide</h1>
+                <h2>Customize your site in no time, no design knowledge necessary</h2>
+                <button type="button" class="btn btn-dark" id="create-guide1">Create a Style Guide</button>
+              </div>
+              <div class="carousel-item" data-bs-interval="10000">
+                <h1>No design knowledge necessary</h1>
+                <h2>An algorithm that knows color theory, typography, and button design for you.</h2>
+                <button type="button" class="btn btn-dark" id="create-guide2">Create a Style Guide</button>
+              </div>
+              <div class="carousel-item" data-bs-interval="10000">
+                <h1>Customize your site in no time</h1>
+                <h2>One short quiz, and you'll receive a style guide that works for Wix sites in minutes.</h2>
+                <button type="button" class="btn btn-dark" id="create-guide3">Create a Style Guide</button>
+              </div>
+            </div>
+          </div>
+    
+    </header>
+
+    <div id="quiz-intro" style="display: none;">
+        <div id="quiz-intro-inner">
+            <h2 id="quiz-heading">Create a Style Guide</h2>
+            <h3 id="quiz-desc">Take a few minutes to tell us about your site and we’ll create a site design that works for you.</h3>
+            <button type="button" class="btn btn-dark" id="take-quiz">Take the Quiz</button>
+        </div>
+    </div>
+
+<div class="container" id="quiz-container" style="display: none;">
+    <form name="site_quiz" onsubmit="display();return false">
+        <div class="form-page" id="quiz-basics">
+            <h4>Type of site:</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="portfolio" name="site_type" value="portfolio">
+                <label class="form-check-label" for="portfolio">Portfolio</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="blog" name="site_type" value="blog">
+                <label class="form-check-label" for="blog">Blog</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="personal" name="site_type" value="personal">
+                <label class="form-check-label" for="personal">Personal</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="organization" name="site_type" value="organization">
+                <label class="form-check-label" for="organization">Organization</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="shop" name="site_type" value="shop">
+                <label class="form-check-label" for="shop">Shop</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="school" name="site_type" value="school">
+                <label class="form-check-label" for="school">School Project</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="info" name="site_type" value="info">
+                <label class="form-check-label" for="info">Informational</label>
+            </div>
+
+            <h4>Site Subject/Theme:</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="school" name="site_subject" value="school">
+                <label class="form-check-label" for="school">School</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="health" name="site_subject" value="health">
+                <label class="form-check-label" for="health">Health</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="lifestyle" name="site_subject" value="lifestyle">
+                <label class="form-check-label" for="lifestyle">Luxury</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="economics" name="site_subject" value="economics">
+                <label class="form-check-label" for="economics">Economics</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="tech" name="site_subject" value="tech">
+                <label class="form-check-label" for="tech">Technology</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="entertainment" name="site_subject" value="entertainment">
+                <label class="form-check-label" for="entertainment">Entertainment</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="art" name="site_subject" value="art">
+                <label class="form-check-label" for="art">Art</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="other" name="site_subject" value="other">
+                <label class="form-check-label" for="other">Other</label>
+            </div>
+
+            <img src="./icons/arrow-right-circle-fill.svg" id="page1-next" class="next-button">
+        </div>
+
+        <div class="form-page" id="quiz-content" style="display: none;">
+            <h4>Amount of Content:</h4>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="content_1" name="content_amount" value="content_1">
+                <label class="form-check-label" for="content_1">Barely any</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="content_2" name="content_amount" value="content_2">
+                <label class="form-check-label" for="content_2">A little</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="content_3" name="content_amount" value="content_3">
+                <label class="form-check-label" for="content_3">Average</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="content_4" name="content_amount" value="content_4">
+                <label class="form-check-label" for="content_4">A good amount</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="content_5" name="content_amount" value="content_5">
+                <label class="form-check-label" for="content_5">Packed with content</label>
+            </div>
+
+            <h4>Media or Text-Heavy</h4>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="content_media" name="content_type" value="content_media">
+                <label class="form-check-label" for="content_media">Mostly media (photos, videos, etc.)</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="content_both" name="content_type" value="content_both">
+                <label class="form-check-label" for="content_both">An even mix</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="content_text" name="content_type" value="content_text">
+                <label class="form-check-label" for="content_text">Mostly text</label>
+            </div>
+
+            <h4>Level of Interactivity:</h4>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="no_buttons" name="interactivity" value="no_buttons">
+                <label class="form-check-label" for="no_buttons">None</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="few_buttons" name="interactivity" value="few_buttons">
+                <label class="form-check-label" for="few_buttons">A few buttons</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="lot_buttons" name="interactivity" value="lot_buttons">
+                <label class="form-check-label" for="lot_buttons">A lot of buttons</label>
+            </div>
+
+            <img src="./icons/arrow-left-circle-fill.svg" id="page2-back" class="back-button">
+            <img src="./icons/arrow-right-circle-fill.svg" id="page2-next" class="next-button">
+        </div>
+
+        <div class="form-page" id="quiz-audience" style="display: none;">
+            <h4>Main audience age:</h4>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="young" name="audience_age" value="young">
+                <label class="form-check-label" for="young">30 and under</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="old" name="audience_age" value="old">
+                <label class="form-check-label" for="old">Over 30</label>
+            </div>
+
+            <h4>Most important emotion to convey:</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="energetic_primary" name="mood_primary" value="energetic_primary">
+                <label class="form-check-label" for="energetic_primary">Energetic</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="sophisticated_primary" name="mood_primary" value="sophisticated_primary">
+                <label class="form-check-label" for="sophisticated_primary">Sophisticated</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="welcoming_primary" name="mood_primary" value="welcoming_primary">
+                <label class="form-check-label" for="welcoming_primary">Welcoming</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="cheerful_primary" name="mood_primary" value="cheerful_primary">
+                <label class="form-check-label" for="cheerful_primary">Cheerful</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="calm_primary" name="mood_primary" value="calm_primary">
+                <label class="form-check-label" for="calm_primary">Calm</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="trustworthy_primary" name="mood_primary" value="trustworthy_primary">
+                <label class="form-check-label" for="trustworthy_primary">Trustworthy</label>
+            </div>
+
+            <h4>Second Most important emotion to convey:</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="energetic_secondary" name="mood_secondary" value="energetic_secondary">
+                <label class="form-check-label" for="energetic_secondary">Energetic</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="sophisticated_secondary" name="mood_secondary" value="sophisticated_secondary">
+                <label class="form-check-label" for="sophisticated_secondary">Sophisticated</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="welcoming_secondary" name="mood_secondary" value="welcoming_secondary">
+                <label class="form-check-label" for="welcoming_secondary">Welcoming</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="cheerful_secondary" name="mood_secondary" value="cheerful_secondary">
+                <label class="form-check-label" for="cheerful_secondary">Cheerful</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="calm_secondary" name="mood_secondary" value="calm_secondary">
+                <label class="form-check-label" for="calm_secondary">Calm</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="trustworthy_secondary" name="mood_secondary" value="trustworthy_secondary">
+                <label class="form-check-label" for="trustworthy_secondary">Trustworthy</label>
+            </div>
+
+            <img src="./icons/arrow-left-circle-fill.svg" id="page3-back" class="back-button">
+            <img src="./icons/arrow-right-circle-fill.svg" id="page3-next" class="next-button">
+        </div>
+
+        <div class="form-page" id="quiz-feel" style="display: none;">
+            <h4>Simple or Complicated:</h4>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="simple" name="simple_complicated" value="simple">
+                <label class="form-check-label" for="simple">Simple</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="complicated" name="simple_complicated" value="complicated">
+                <label class="form-check-label" for="complicated">Complicated</label>
+            </div>
+
+            <h4>Bold or Understated:</h4>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="bold" name="bold_understated" value="bold">
+                <label class="form-check-label" for="bold">Bold</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="understated" name="bold_understated" value="understated">
+                <label class="form-check-label" for="understated">Understated</label>
+            </div>
+
+            <h4>Modern or Classic:</h4>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="modern" name="modern_classic" value="modern">
+                <label class="form-check-label" for="modern">Modern</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="classic" name="modern_classic" value="classic">
+                <label class="form-check-label" for="classic">Classic</label>
+            </div>
+
+            <h4>Fun or Serious:</h4>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="fun" name="fun_serious" value="fun">
+                <label class="form-check-label" for="fun">Fun</label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" id="serious" name="fun_serious" value="serious">
+                <label class="form-check-label" for="serious">Serious</label>
+            </div>
+            <img src="./icons/arrow-left-circle-fill.svg" id="page4-back" class="back-button">
+            <button type="submit" class="btn btn-primary mb-3" id="quiz-finish">Finish</button>
+        </div>
+    </form>
+</div>
+
+<div id="style-guide" class="grid-container", style="display: none;">
+    <h2 id="style-guide-heading">Style Guide</h2>
+    <hr>
+    <div class="row">
+        <div id="colorDiv" class="col-md-7">
+            <h3>Colors</h3>
+            <div class="grid-container palette">
+                <div class="row">
+                    <div id="color1" class="col-md-2 color"></div>
+                    <div class="col-md-10">
+                        <div class="grid-container">
+                            <div class="row">
+                                <h4 class="col-md-6">Color 1</h4>
+                                <h4 id="hex1" class="col-md-4 hex">#Hex</h4>
+                            </div>
+                            <p class="row">Use for site background</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="color2" class="col-md-2 color"></div>
+                    <div class="col-md-10">
+                        <div class="grid-container">
+                            <div class="row">
+                                <h4 class="col-md-6">Color 2</h4>
+                                <h4 id="hex2" class="col-md-4 hex">#Hex</h4>
+                            </div>
+                            <p class="row">Main color: use for headings, less important buttons, etc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="color3" class="col-md-2 color"></div>
+                    <div class="col-md-10">
+                        <div class="grid-container">
+                            <div class="row">
+                                <h4 class="col-md-6">Color 3</h4>
+                                <h4 id="hex3" class="col-md-4 hex">#Hex</h4>
+                            </div>
+                            <p class="row">Accent color: use for important buttons and other calls to action</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="color4" class="col-md-2 color"></div>
+                    <div class="col-md-10">
+                        <div class="grid-container">
+                            <div class="row">
+                                <h4 class="col-md-6">Color 4</h4>
+                                <h4 id="hex4" class="col-md-4 hex">#Hex</h4>
+                            </div>
+                            <p class="row">Use for subheadings, section backgrounds, and other unimportant decorations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="color5" class="col-md-2 color"></div>
+                    <div class="col-md-10">
+                        <div class="grid-container">
+                            <div class="row">
+                                <h4 class="col-md-6">Color 5</h4>
+                                <h4 id="hex5" class="col-md-4 hex">#Hex</h4>
+                            </div>
+                            <p class="row">Alternate option for subheadings, section backgrounds, and other unimportant decorations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fontDiv" class="col-md-5">
+            <h3>Fonts</h3>
+            <h4 id="h1">HEADING 1</h4>
+            <p id="h1Desc">Font description</p>
+            <h4 id="h2">Heading 2</h4>
+            <p id="h2Desc">Font description</p>
+            <h4 id="h3">Heading 3</h4>
+            <p id="h3Desc">Font description</p>
+            <h4 id="h4">Heading 4</h4>
+            <p id="h4Desc">Font description</p>
+            <h4 id="h5">HEADING 5</h4>
+            <p id="h5Desc">Font description</p>
+            <h4 id="h6">Heading 6</h4>
+            <p id="h6Desc">Font description</p>
+
+            <h4 id="p1">Paragraph 1</h4>
+            <p id="p1Desc">Font description</p>
+            <h4 id="p2">Paragraph 2</h4>
+            <p id="p2Desc">Font description</p>
+            <h4 id="p3">Paragraph 3</h4>
+            <p id="p3Desc">Font description</p>
+        </div>
+    </div>
+        <div class="row">
+            <div id="buttonDiv" class="col-md-7">
+                <h3>Buttons</h3>
+                <div class="row">
+                    <button id="buttonPrimary" class="btn btn-primary col-md-3">Primary</button>
+                    <div class="col-md-9">
+                        <strong><p>Primary Button: use for important actions and features only</p></strong>
+                        <p id="buttonDescPrimary">Description</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="buttonSecondary" class="btn btn-outline-secondary col-md-3">Secondary</button>
+                    <div class="col-md-9">
+                        <strong class="col-md-9"><p>Secondary Button: use for less important actions and features</p></strong>
+                        <p id="buttonDescSecondary">Description</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="buttonTertiary" class="btn btn-link col-md-3">Tertiary</button>
+                    <div class="col-md-9">
+                        <strong><p>Tertiary Button: use for dialogs and links only</p></strong>
+                        <p id="buttonDescTertiary">Description</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="iconDiv" class="col-md-5">
+                <h3>Icons</h3>
+                <div id="icon1" class="row">
+                    <img id="iconExample1" class="col-md-3">
+                    <p id="iconDesc1" class="col-md-9">Description</p>
+                </div>
+                <div id="icon2" class="row">
+                    <img id="iconExample2" class="col-md-3">
+                    <p id="iconDesc2" class="col-md-9">Description</p>
+                </div>
+                <div id="icon3" class="row">
+                    <img id="iconExample3" class="col-md-3">
+                    <p id="iconDesc3" class="col-md-9">Description</p>
+                </div>
+                <div id="icon4" class="row">
+                    <img id="iconExample4" class="col-md-3">
+                    <p id="iconDesc4" class="col-md-9">Description</p>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="./script.js"></script>
+</body>
+
+
+</html>

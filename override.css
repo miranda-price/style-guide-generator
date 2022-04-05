@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+/*3% hold 6% transition*/
+
+@keyframes hero {
+    0%   {background-color: #d62900;}
+    6%   {background-color: #d62900;}
+    10%   {background-color: #ef7627;}
+    16%   {background-color: #ef7627;}
+    20%   {background-color: #ff9b55;}
+    26%   {background-color: #ff9b55;}
+    30%   {background-color: #d461a6;}
+    36%   {background-color: #d461a6;}
+    40%   {background-color: #b55690;}
+    46%   {background-color: #b55690;}
+    50%   {background-color: #a50062;}
+    55%   {background-color: #a50062;}
+    59%   {background-color: #b55690;}
+    63%   {background-color: #b55690;}
+    69%   {background-color: #d461a6;}
+    73%   {background-color: #d461a6;}
+    79%   {background-color: #ff9b55;}
+    83%   {background-color: #ff9b55;}
+    89%   {background-color: #ef7627;}
+    93%   {background-color: #ef7627;}
+    99%   {background-color: #d62900;}
+    100%   {background-color: #d62900;}
+  }
+
+h4 {font-size: 20px;}
+
+.form-check-input:checked, #quiz-finish {
+  background-color: #ef7627;
+  border-color: #ef7627;
+}
+
+#hero, #quiz-intro {
+  height: 100vh;
+  color: #eee;
+}
+
+#hero {
+  width: 100%;
+  background-color: red;
+  animation-name: hero;
+  animation-duration: 180s;
+  animation-iteration-count: infinite;
+  z-index: 1;
+  
+}
+
+.carousel-inner, #quiz-intro-inner {
+  position: relative;
+  top: 30%;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+
+.carousel-item > *, #quiz-intro-inner > * {
+  margin: 40px 0;
+}
+
+
+.carousel-item > *:first-child, #quiz-intro-inner > *:first-child {
+  margin-top: 0px;
+}
+
+form > img {
+  width: 50px;
+  height: auto;
+}
+
+.grid-container, .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  padding: 0px;
+  margin: 0px;
+}
+
+#quiz-intro {
+  background-color:#a50062;
+}
+
+.form-page {
+  height: 100vh;
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.form-page h4, .form-page h3 {
+  margin-top: 15px;
+  color: #d62900;
+  font-weight: bold;
+}
+
+.back-button {
+  width: 30px;
+  height: auto;
+  position: fixed;
+  bottom: 5vh;
+  left: 15vw;
+}
+
+.next-button {
+  width: 30px;
+  height: auto;
+  position: fixed;
+  bottom: 5vh;
+  right: 15vw;
+}
+
+#quiz-finish {
+  position: fixed;
+  bottom: 2vh;
+  right: 13vw;
+}
+
+.palette {
+  margin: 0;
+  width: 100%;
+}
+
+.palette .row {
+  padding: 15px 0;
+}
+
+#buttonDiv button {
+  max-height: 50px;
+}
