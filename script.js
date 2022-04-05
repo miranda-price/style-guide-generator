@@ -148,9 +148,6 @@ const submitForm = () => {
     audienceAge = document.forms['site_quiz']['audience_age'].value;
     moodPrimary = document.forms['site_quiz']['mood_primary'].value;
     moodSecondary = document.forms['site_quiz']['mood_secondary'].value;
-    console.log(siteType);
-    console.log(interactivity);
-    console.log(audienceAge);
 
     if(document.forms['site_quiz']['simple_complicated'].value === "complicated") {
         complicated = true;
@@ -183,7 +180,6 @@ const submitForm = () => {
         fun = false;
         serious = true;
     }
-    console.log(serious);
 
 }
 
@@ -468,7 +464,7 @@ const fontGen = () => {
         underline = false;
     } else if (siteType === 'shop' || siteType === 'info' || siteType === 'school') {
         italics = false;
-        undeerline = true;
+        underline = true;
     } else {
         if (Math.round(Math.random()) === 0) {
             italics = true;
@@ -533,7 +529,6 @@ const fontGen = () => {
     p2Desc.innerHTML = `18px ${fontFamily[1]}`;
 
     if (bold && italics) {
-        console.log('bold italic')
         p3.style.fontStyle = 'italic';
         h4.style.fontStyle = 'italic';
 
@@ -541,7 +536,6 @@ const fontGen = () => {
         h4Desc.innerHTML = `48px ${fontFamily[0]}, italic`;
         h6Desc.innerHTML = `36px ${fontFamily[0]}`;
     } else if (bold && underline) {
-        console.log('bold underline');
         p3.style.textDecoration = 'underline';
         h4.style.textDecoration = 'underline';
 
@@ -549,7 +543,6 @@ const fontGen = () => {
         h4Desc.innerHTML = `48px ${fontFamily[0]}, underlined`;
         h6Desc.innerHTML = `36px ${fontFamily[0]}`;
     } else if (understated && italics) {
-        console.log('understated italic');
         p3.style.fontStyle = 'italic';
         h6.style.fontStyle = 'italic';
 
@@ -557,7 +550,6 @@ const fontGen = () => {
         h4Desc.innerHTML = `48px ${fontFamily[0]}`;
         h6Desc.innerHTML = `36px ${fontFamily[0]}, italic`;
     } else {
-        console.log('understated underline');
         p3.style.textDecoration = 'underline';
         h6.style.textDecoration = 'underline';
 
