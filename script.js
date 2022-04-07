@@ -178,7 +178,8 @@ const iconDesc4 = document.getElementById('iconDesc4');
 let siteType, siteSubject, contentAmount, contentType, interactivity, audienceAge, moodPrimary, moodSecondary, simple, complicated, bold, understated, modern, classic, fun, serious;
 
     // color variables
-let primaryColor, palettePattern, lightMode, darkMode;
+let primaryColor, lightMode, darkMode;
+let palettePattern = 'monochromatic';
 let color1, color2, color3, color4, color5 = [0, 0, 0];
 
     // font variables
@@ -287,7 +288,7 @@ const colorGen = () => {
     } else if (moodSecondary === 'cheerful_secondary' || moodSecondary === 'energetic_secondary') {
         palettePattern = 'triadic';
     } else if (bold) {
-        if (simple) {palettePattern = 'complement';}
+        if (simple) {palettePattern = 'complementary';}
         else {palettePattern = 'split'}
     } else {
         if (moodPrimary === 'sophisticated_primary' || moodSecondary === 'sophisticated_secondary') {
@@ -760,4 +761,6 @@ const display = () => {
 const newPalette = document.getElementById('new-palette');
 newPalette.onclick = () => {
     colorGen();
+    colorResult1 = ntc.name(color1);
+    console.log(colorResult1[1]);
 };
