@@ -756,3 +756,8 @@ const display = () => {
         document.getElementById('quiz-container').style.display='none';
     }
 }
+
+const newPalette = document.getElementById('new-palette');
+newPalette.onclick = () => {
+    colorGen();
+};
