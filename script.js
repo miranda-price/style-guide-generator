@@ -40,16 +40,68 @@ backButton3 = document.getElementById('page3-back');
 backButton4 = document.getElementById('page4-back');
 
 nextButton1.onclick = () => {
-    document.getElementById('quiz-basics').style.display = 'none';
-    document.getElementById('quiz-content').style.display = 'block';
+    siteType = document.forms['site_quiz']['site_type'].value;
+    siteSubject = document.forms['site_quiz']['site_subject'].value;
+
+    if(siteType === '' || siteSubject === '') {
+        if (siteType === '') {
+            document.getElementById('site_type_error').style.visibility = 'visible';
+        } else {document.getElementById('site_type_error').style.visibility = 'hidden';}
+        if (siteSubject === '') {
+            document.getElementById('site_subject_error').style.visibility = 'visible';
+        } else {document.getElementById('site_subject_error').style.visibility = 'hidden';}
+    } else {
+        document.getElementById('site_type_error').style.visibility = 'hidden';
+        document.getElementById('site_subject_error').style.visibility = 'hidden';
+        document.getElementById('quiz-basics').style.display = 'none';
+        document.getElementById('quiz-content').style.display = 'block';
+    }
 }
 nextButton2.onclick = () => {
-    document.getElementById('quiz-content').style.display = 'none';
-    document.getElementById('quiz-audience').style.display = 'block';
+    contentAmount = document.forms['site_quiz']['content_amount'].value;
+    contentType = document.forms['site_quiz']['content_type'].value;
+    interactivity = document.forms['site_quiz']['interactivity'].value;
+
+    if(contentAmount === '' || contentType === '' || interactivity === '') {
+        if (contentAmount === '') {
+            document.getElementById('content_amount_error').style.visibility = 'visible';
+        } else {document.getElementById('content_amount_error').style.visibility = 'hidden';}
+        if (contentType === '') {
+            document.getElementById('content_type_error').style.visibility = 'visible';
+        } else {document.getElementById('content_type_error').style.visibility = 'hidden';}
+        if (interactivity === '') {
+            document.getElementById('interactivity_error').style.visibility = 'visible';
+        } else {document.getElementById('interactivity_error').style.visibility = 'hidden';}
+    } else {
+        document.getElementById('content_amount_error').style.visibility = 'hidden';
+        document.getElementById('content_type_error').style.visibility = 'hidden';
+        document.getElementById('interactivity_error').style.visibility = 'hidden';
+        document.getElementById('quiz-content').style.display = 'none';
+        document.getElementById('quiz-audience').style.display = 'block';
+    }
 }
 nextButton3.onclick = () => {
-    document.getElementById('quiz-audience').style.display = 'none';
+    audienceAge = document.forms['site_quiz']['audience_age'].value;
+    moodPrimary = document.forms['site_quiz']['mood_primary'].value;
+    moodSecondary = document.forms['site_quiz']['mood_secondary'].value;
+
+    if(audienceAge === '' || moodPrimary === '' || moodSecondary === '') {
+        if (audienceAge === '') {
+            document.getElementById('audience_age_error').style.visibility = 'visible';
+        } else {document.getElementById('audience_age_error').style.visibility = 'hidden';}
+        if (moodPrimary === '') {
+            document.getElementById('mood_primary_error').style.visibility = 'visible';
+        } else {document.getElementById('mood_primary_error').style.visibility = 'hidden';}
+        if (moodSecondary === '') {
+            document.getElementById('mood_secondary_error').style.visibility = 'visible';
+        } else {document.getElementById('mood_secondary_error').style.visibility = 'hidden';}
+    } else {
+        document.getElementById('audience_age_error').style.visibility = 'hidden';
+        document.getElementById('mood_primary_error').style.visibility = 'hidden';
+        document.getElementById('mood_secondary_error').style.visibility = 'hidden';
+        document.getElementById('quiz-audience').style.display = 'none';
     document.getElementById('quiz-feel').style.display = 'block';
+    }
 }
 
 backButton2.onclick = () => {
@@ -137,51 +189,6 @@ let borderRadius, buttonFont;
 
     // icon variables
 let iconFilled, iconOpen, iconRound, iconSharp;
-
-// form processor
-const submitForm = () => {
-    siteType = document.forms['site_quiz']['site_type'].value;
-    siteSubject = document.forms['site_quiz']['site_subject'].value;
-    contentAmount = document.forms['site_quiz']['content_amount'].value;
-    contentType = document.forms['site_quiz']['content_type'].value;
-    interactivity = document.forms['site_quiz']['interactivity'].value;
-    audienceAge = document.forms['site_quiz']['audience_age'].value;
-    moodPrimary = document.forms['site_quiz']['mood_primary'].value;
-    moodSecondary = document.forms['site_quiz']['mood_secondary'].value;
-
-    if(document.forms['site_quiz']['simple_complicated'].value === "complicated") {
-        complicated = true;
-        simple = false;
-    } else {
-        complicated = false;
-        simple = true;
-    }
-
-    if(document.forms['site_quiz']['bold_understated'].value === "bold") {
-        bold = true;
-        understated = false;
-    } else {
-        bold = false;
-        understated = true;
-    }
-
-    if(document.forms['site_quiz']['modern_classic'].value === "classic") {
-        classic = true;
-        modern = false;
-    } else {
-        classic = false;
-        modern = true;
-    }
-
-    if(document.forms['site_quiz']['fun_serious'].value === "fun") {
-        fun = true;
-        serious = false;
-    } else {
-        fun = false;
-        serious = true;
-    }
-
-}
 
 // color generator
     // hsl to hex converter
@@ -646,7 +653,7 @@ const iconGen = () => {
 
     } else if (iconOpen && iconSharp) {
         iconExample1.src = "./icons/basket3.svg";
-        iconExample2.src = "./icons/cart-plus.svg";
+        iconExample2.src = "./icons/cart2.svg";
         iconExample3.src = "./icons/folder2.svg";
         iconExample4.src = "./icons/funnel.svg";
 
@@ -679,13 +686,73 @@ const iconGen = () => {
 
 // display results
 const display = () => {
-    submitForm();
-    colorGen();
-    fontGen();
-    buttonGen();
-    iconGen();
-    document.getElementById("style-guide").style.display = 'block';
-    document.getElementById("quiz-intro").style.display = 'block';
-    document.getElementById('style-guide-heading').scrollTop = document.getElementById('style-guide-heading').offsetTop;
-    document.getElementById('quiz-container').style.display='none';
+    // final form page validation
+    let simpleComplicated = document.forms['site_quiz']['simple_complicated'].value;
+    let boldUnderstated = document.forms['site_quiz']['bold_understated'].value;
+    let modernClassic = document.forms['site_quiz']['modern_classic'].value;
+    let funSerious = document.forms['site_quiz']['fun_serious'].value;
+
+    if(simpleComplicated === '' || boldUnderstated === '' || modernClassic === '' || funSerious === '') {
+        if (simpleComplicated === '') {
+            document.getElementById('simple_complicated_error').style.visibility = 'visible';
+        } else {document.getElementById('simple_complicated_error').style.visibility = 'hidden';}
+        if (boldUnderstated === '') {
+            document.getElementById('bold_understated_error').style.visibility = 'visible';
+        } else {document.getElementById('bold_understated_error').style.visibility = 'hidden';}
+        if (modernClassic === '') {
+            document.getElementById('modern_classic_error').style.visibility = 'visible';
+        } else {document.getElementById('modern_classic_error').style.visibility = 'hidden';}
+        if (funSerious === '') {
+            document.getElementById('fun_serious_error').style.visibility = 'visible';
+        } else {document.getElementById('fun_serious_error').style.visibility = 'hidden';}
+
+        
+    } else {
+        document.getElementById('simple_complicated_error').style.visibility = 'hidden';
+        document.getElementById('bold_understated_error').style.visibility = 'hidden';
+        document.getElementById('modern_classic_error').style.visibility = 'hidden';
+        document.getElementById('fun_serious_error').style.visibility = 'hidden';
+
+        if(document.forms['site_quiz']['simple_complicated'].value === "complicated") {
+            complicated = true;
+            simple = false;
+        } else {
+            complicated = false;
+            simple = true;
+        }
+    
+        if(document.forms['site_quiz']['bold_understated'].value === "bold") {
+            bold = true;
+            understated = false;
+        } else {
+            bold = false;
+            understated = true;
+        }
+    
+        if(document.forms['site_quiz']['modern_classic'].value === "classic") {
+            classic = true;
+            modern = false;
+        } else {
+            classic = false;
+            modern = true;
+        }
+    
+        if(document.forms['site_quiz']['fun_serious'].value === "fun") {
+            fun = true;
+            serious = false;
+        } else {
+            fun = false;
+            serious = true;
+        }
+    
+        // display results
+        colorGen();
+        fontGen();
+        buttonGen();
+        iconGen();
+        document.getElementById("style-guide").style.display = 'block';
+        document.getElementById("quiz-intro").style.display = 'block';
+        document.getElementById('style-guide-heading').scrollTop = document.getElementById('style-guide-heading').offsetTop;
+        document.getElementById('quiz-container').style.display='none';
+    }
 }
