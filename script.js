@@ -637,7 +637,7 @@ const iconGen = () => {
         iconDesc3.innerHTML = "Minimalist";
         iconDesc4.innerHTML = "Neutral colors";
     } else if (iconFilled && iconRound) {
-        iconExample1.src = "./icons/archive-filled.svg";
+        iconExample1.src = "./icons/archive-fill.svg";
         iconExample2.src = "./icons/chat-fill.svg";
         iconExample3.src = "./icons/clipboard-fill.svg";
         iconExample4.src = "./icons/arrow-down-circle-fill.svg";
@@ -761,6 +761,4 @@ const display = () => {
 const newPalette = document.getElementById('new-palette');
 newPalette.onclick = () => {
     colorGen();
-    colorResult1 = ntc.name(color1);
-    console.log(colorResult1[1]);
 };
