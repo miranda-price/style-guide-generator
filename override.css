@@ -130,5 +130,7 @@ form > img {
 }
 
 #buttonDiv button {
-  max-height: 50px;
+  max-height: 100px;
+  width: 70%;
+  margin: 10px 15%;
 }
