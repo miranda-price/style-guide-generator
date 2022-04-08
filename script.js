@@ -1,3 +1,35 @@
+// landing page animation
+const dot1 = document.getElementById('dot01');
+const dot2 = document.getElementById('dot02');
+const dot3 = document.getElementById('dot03');
+const dot4 = document.getElementById('dot04');
+const dot5 = document.getElementById('dot05');
+const dot6 = document.getElementById('dot06');
+const dot7 = document.getElementById('dot07');
+const dot8 = document.getElementById('dot08');
+const dot9 = document.getElementById('dot09');
+const dot10 = document.getElementById('dot10');
+const dot11 = document.getElementById('dot11');
+const dot12 = document.getElementById('dot12');
+const dot13 = document.getElementById('dot13');
+const dot14 = document.getElementById('dot14');
+const dot15 = document.getElementById('dot15');
+
+let dots = [dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10, dot11, dot12, dot13, dot14, dot15];
+
+for (let dot in dots) {
+    let r = Math.round(Math.random()*150) + 50;
+    dots[dot].style.width = `${r}px`;
+    dots[dot].style.height = `${r}px`;
+
+    let x = Math.round(Math.random()*100);
+    dots[dot].style.top = `${x}vh`;
+    let y = Math.round(Math.random()*100);
+    dots[dot].style.left = `${y}vw`;
+}
+
+document.getElementById('dot-div').style.display = 'block';
+
 // SPA setup
 // hero to quiz intro
 const createButton1 = document.getElementById('create-guide1');
