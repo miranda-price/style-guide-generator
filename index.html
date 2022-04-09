@@ -295,8 +295,11 @@
     <hr>
     <div class="row">
         <div id="colorDiv" class="col-md-7">
-            <h3>Colors</h3>
-          <button class="btn btn-dark" id="new-palette">Generate New</button>
+            <div class="info">
+                <h3>Colors</h3>
+                <img src="./icons/info-circle-fill.svg" id="color-info" class="info-button">
+                <button class="btn btn-dark" id="new-palette">Generate New</button>
+            </div>
             <div class="grid-container palette">
                 <div class="row">
                     <div id="color1" class="col-md-2 color"></div>
@@ -362,7 +365,10 @@
         </div>
 
         <div id="fontDiv" class="col-md-5">
-            <h3>Fonts</h3>
+            <div class="info">
+                <h3>Fonts</h3>
+                <img src="./icons/info-circle-fill.svg" id="font-info" class="info-button">
+            </div>
             <h4 id="h1">HEADING 1</h4>
             <p id="h1Desc">Font description</p>
             <h4 id="h2">Heading 2</h4>
@@ -385,7 +391,10 @@
         </div>
     </div>
         <div id="buttonDiv" class="row">
+            <div class="info">
             <h3>Buttons</h3>
+                <img src="./icons/info-circle-fill.svg" id="button-info" class="info-button">
+                </div>
             <div class="col-md-4">
                 <div class="row">
                     <button id="buttonPrimary" class="btn btn-primary">Primary</button>
