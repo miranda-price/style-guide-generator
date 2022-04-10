@@ -801,8 +801,11 @@ colorInfo.onclick = () => {
         document.getElementById('pattern-explanation').innerHTML = `Monochromatic palettes are all based on the same color.  Monochromatic palettes are seen as sophisticated and serious, but realistically work well for just about any design.`;
     }
 
-    /* <p id="pattern-explanation">Describe pattern type and decision</p>
-        <p id="dark-mode-explanation">Describe dark vs light mode decision</p> */
+    if (darkLight === 'dark') {
+        document.getElementById('dark-mode-explanation').innerHTML = `Dark mode sites are best suited for entertainment or technology sites, younger audiences, sites without a lot of content, and sites that are more visual than textual.`;
+    } else {
+        document.getElementById('dark-mode-explanation').innerHTML = `Dark mode sites are best suited for sites not related to entertainment or technology, older audiences, sites a lot of content, and sites that are more textual than visual.`;      
+    }
 
     document.getElementById('color-info-box').style.display = 'block';
     document.getElementById('font-info-box').style.display = 'none';
