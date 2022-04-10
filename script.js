@@ -770,16 +770,35 @@ const fontInfo = document.getElementById('font-info');
 const buttonInfo = document.getElementById('button-info');
 
 colorInfo.onclick = () => {
+    let darkLight;
+    if (darkMode === true) {darkLight = 'dark';}
+    else {darkLight = 'light';}
+    document.getElementById('color-results').innerHTML = `Your Results: ${primaryColor} ${palettePattern} palette, ${darkLight} mode`;
+
     document.getElementById('color-info-box').style.display = 'block';
     document.getElementById('font-info-box').style.display = 'none';
     document.getElementById('button-info-box').style.display = 'none';
 }
 fontInfo.onclick = () => {
+    let textDecoration;
+    if (italics === true) {textDecoration = 'italicized';}
+    else {textDecoration = 'underlined';}
+    document.getElementById('font-results').innerHTML = `Your Results: ${fontFamily[0]} headings and ${fontFamily[1]} paragraphs, with ${textDecoration} text`;
+
     document.getElementById('font-info-box').style.display = 'block';
     document.getElementById('color-info-box').style.display = 'none';
     document.getElementById('button-info-box').style.display = 'none';
 }
 buttonInfo.onclick = () => {
+    let buttonFontType, buttonShape;
+    if (buttonFont === fontFamily[0]) {buttonFontType = 'heading';}
+    else {buttonFontType = 'paragraph';}
+
+    if (borderRadius === '0px') {buttonShape = 'squared';}
+    else if (borderRadius === '10px') {buttonShape = 'rounded';}
+    else {buttonShape = 'round';}
+    document.getElementById('button-results').innerHTML = `Your Results: ${buttonFontType} font and ${buttonShape} corners`;
+
     document.getElementById('button-info-box').style.display = 'block';
     document.getElementById('color-info-box').style.display = 'none';
     document.getElementById('font-info-box').style.display = 'none';
