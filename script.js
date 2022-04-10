@@ -797,7 +797,27 @@ buttonInfo.onclick = () => {
     if (borderRadius === '0px') {buttonShape = 'squared';}
     else if (borderRadius === '10px') {buttonShape = 'rounded';}
     else {buttonShape = 'round';}
+
     document.getElementById('button-results').innerHTML = `Your Results: ${buttonFontType} font and ${buttonShape} corners`;
+
+    if(bold){
+        document.getElementById('font-explanation').innerHTML = `Because you wanted a bold website, you should use your headings' font for buttons to make them stand out.`;
+    } else {
+        document.getElementById('font-explanation').innerHTML = `Because you wanted an understated website, you should use your paragraphs' font for buttons for a more subtle look.`;
+    }
+
+    if (interactivity === 'lot_buttons') {
+        document.getElementById('border-radius-explanation').innerHTML = `Because you will be using a lot of buttons for your site, squared corners will give the groups of buttons a cleaner and more intentional look.`;
+    } else if (classic) {
+        document.getElementById('border-radius-explanation').innerHTML = `Old-school squared corners will give your site a more classic look compared to the modern flare that come with rounded buttons.`;
+    } else if (serious) {
+        document.getElementById('border-radius-explanation').innerHTML = `Although you want your site to look modern, you still want your site to look serious.  Slightly rounded corners provide the perfect balance between modernity and professionalism.`;
+    } else {
+        document.getElementById('border-radius-explanation').innerHTML = `You want a fun, modern site that won't be cluttered with buttons.  Rounded corners will give your site the fresh, playful look you've been looking for.`;
+    }
+
+    /*<p id="font-explanation">Describe font decision</p>
+        <p id="border-radius-explanation">Describe pattern type and decision</p> */
 
     document.getElementById('button-info-box').style.display = 'block';
     document.getElementById('color-info-box').style.display = 'none';
