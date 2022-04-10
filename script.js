@@ -789,6 +789,18 @@ colorInfo.onclick = () => {
     else if (primaryColor === 'purple' && moodPrimary != 'sophisticated') {document.getElementById('color-explanation').innerHTML = `Purple is an sophisticated color, which matches your site's secondary emotion`;}
     else {document.getElementById('color-explanation').innerHTML = `${primaryColor.charAt(0).toUpperCase() + primaryColor.slice(1)} is a very ${moodSecondary.replace('_secondary', '')} color, which matches your site's secondary emotion`;}
 
+    if (palettePattern === 'triadic') {
+        document.getElementById('pattern-explanation').innerHTML = `Triadic palettes are based on three colors equally spaced on the color wheel.  Triadic palettes are seen as energetic and cheerful.`;
+    } else if (palettePattern === 'split') {
+        document.getElementById('pattern-explanation').innerHTML = `Split-complementary palettes are based on an main color and two neighboring colors on the opposite side of the color wheel.  Split-complementary palettes are seen as bold and somewhat complex, while also adding a fun, playful feel to a design.`;
+    } else if (palettePattern === 'complementary') {
+        document.getElementById('pattern-explanation').innerHTML = `Complementary palettes are based on two colors that are opposite each other on the color wheel.  Complementary palettes are seen as bold, while still relatively simple.`;
+    } else if (palettePattern === 'analogous') {
+        document.getElementById('pattern-explanation').innerHTML = `Analogous palettes are based on three colors located next to each other on the color wheel.  Analogous palettes are seen as calming.`;
+    } else {
+        document.getElementById('pattern-explanation').innerHTML = `Monochromatic palettes are all based on the same color.  Monochromatic palettes are seen as sophisticated and serious, but realistically work well for just about any design.`;
+    }
+
     /* <p id="pattern-explanation">Describe pattern type and decision</p>
         <p id="dark-mode-explanation">Describe dark vs light mode decision</p> */
 
