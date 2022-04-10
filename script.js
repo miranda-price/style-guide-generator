@@ -20,6 +20,10 @@ createButton3.onclick = quizIntro;
 const quizButton = document.getElementById('take-quiz');
 
 quizButton.onclick = () => {
+    document.getElementById('color-info-box').style.display = 'none';
+    document.getElementById('font-info-box').style.display = 'none';
+    document.getElementById('button-info-box').style.display = 'none';
+    
     document.getElementById("quiz-intro").style.display = 'none';
     document.getElementById("style-guide").style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
@@ -266,6 +270,8 @@ const colorGen = () => {
             primaryColor = 'brown';
         } else if (moodSecondary === 'welcoming_secondary') {
             primaryColor = 'pink';
+        } else if (moodSecondary === 'sophisticated_secondary') {
+            primaryColor = 'red';
         } else {primaryColor = 'red';}
     } else if (moodPrimary === 'calm_primary' || moodPrimary === 'cheerful_primary') {
         if (moodSecondary === 'energized_secondary' || moodSecondary === 'cheerful_secondary') {
@@ -274,9 +280,11 @@ const colorGen = () => {
             primaryColor = 'blue';
         } else if (moodSecondary === 'welcoming_secondary') {
             primaryColor = 'green';
+        } else if(moodSecondary === 'sophisticated_secondary') {
+            primaryColor = 'purple';
         } else {primaryColor = 'blue';}
     } else {
-        if (moodSecondary === 'energetic_secondary' || moodPrimary === 'trustworthy_secondary' || moodPrimary === 'welcoming_secondary') {primaryColor = 'red';}
+        if (moodSecondary === 'energetic_secondary' || moodSecondary === 'trustworthy_secondary' || moodSecondary === 'welcoming_secondary') {primaryColor = 'red';}
         else {primaryColor = 'purple'}
     }
 
@@ -760,5 +768,129 @@ const display = () => {
 
 const newPalette = document.getElementById('new-palette');
 newPalette.onclick = () => {
+    document.getElementById('color-info-box').style.display = 'none';
+    document.getElementById('font-info-box').style.display = 'none';
+    document.getElementById('button-info-box').style.display = 'none';
     colorGen();
 };
+
+// explain results
+    // display results
+const colorInfo = document.getElementById('color-info');
+const fontInfo = document.getElementById('font-info');
+const buttonInfo = document.getElementById('button-info');
+
+colorInfo.onclick = () => {
+    let darkLight, warmCool;
+    if (darkMode === true) {darkLight = 'dark';}
+    else {darkLight = 'light';}
+
+    if(primaryColor === 'red' || primaryColor === 'pink' || primaryColor === 'orange' || primaryColor === 'yellow' || primaryColor === 'brown') {warmCool = 'warm';}
+    else {warmCool = 'cool';}
+
+    document.getElementById('color-results').innerHTML = `Your Results: ${primaryColor} ${palettePattern} palette, ${darkLight} mode`;
+
+    document.getElementById('warm-cool-explanation').innerHTML = `Your site's primary emotion, ${moodPrimary.replace('_primary','')}, fits best with ${warmCool} colors.`;
+
+    if (primaryColor === 'red' && moodPrimary != 'sophisticated') {document.getElementById('color-explanation').innerHTML = `Red is an sophisticated color, which matches your site's secondary emotion`;}
+    else if (primaryColor === 'purple' && moodPrimary != 'sophisticated') {document.getElementById('color-explanation').innerHTML = `Purple is an sophisticated color, which matches your site's secondary emotion`;}
+    else {document.getElementById('color-explanation').innerHTML = `${primaryColor.charAt(0).toUpperCase() + primaryColor.slice(1)} is a very ${moodSecondary.replace('_secondary', '')} color, which matches your site's secondary emotion`;}
+
+    if (palettePattern === 'triadic') {
+        document.getElementById('pattern-explanation').innerHTML = `Triadic palettes are based on three colors equally spaced on the color wheel.  Triadic palettes are seen as energetic and cheerful.`;
+    } else if (palettePattern === 'split') {
+        document.getElementById('pattern-explanation').innerHTML = `Split-complementary palettes are based on an main color and two neighboring colors on the opposite side of the color wheel.  Split-complementary palettes are seen as bold and somewhat complex, while also adding a fun, playful feel to a design.`;
+    } else if (palettePattern === 'complementary') {
+        document.getElementById('pattern-explanation').innerHTML = `Complementary palettes are based on two colors that are opposite each other on the color wheel.  Complementary palettes are seen as bold, while still relatively simple.`;
+    } else if (palettePattern === 'analogous') {
+        document.getElementById('pattern-explanation').innerHTML = `Analogous palettes are based on three colors located next to each other on the color wheel.  Analogous palettes are seen as calming.`;
+    } else {
+        document.getElementById('pattern-explanation').innerHTML = `Monochromatic palettes are all based on the same color.  Monochromatic palettes are seen as sophisticated and serious, but realistically work well for just about any design.`;
+    }
+
+    if (darkLight === 'dark') {
+        document.getElementById('dark-mode-explanation').innerHTML = `Dark mode sites are best suited for entertainment or technology sites, younger audiences, sites without a lot of content, and sites that are more visual than textual.`;
+    } else {
+        document.getElementById('dark-mode-explanation').innerHTML = `Dark mode sites are best suited for sites not related to entertainment or technology, older audiences, sites a lot of content, and sites that are more textual than visual.`;      
+    }
+
+    document.getElementById('color-info-box').style.display = 'block';
+    document.getElementById('font-info-box').style.display = 'none';
+    document.getElementById('button-info-box').style.display = 'none';
+}
+fontInfo.onclick = () => {
+    let textDecoration;
+    if (italics === true) {textDecoration = 'italicized';}
+    else {textDecoration = 'underlined';}
+
+    document.getElementById('font-results').innerHTML = `Your Results: ${fontFamily[0]} headings and ${fontFamily[1]} paragraphs, with ${textDecoration} text`;
+
+    if (fontPairing === 'serif_sans') {
+        document.getElementById('pairing-explanation').innerHTML = `A serif font paired with a sans-serif font creates the most contrast between headings and paragraphs, contributing to the bold and complicated feel you want for your site.`;
+    } else if (fontPairing === 'sans_contrast') {
+        document.getElementById('pairing-explanation').innerHTML = `Pairing two contrasting sans-serif fonts creates a bold site design, however by using sans-serif fonts for both headings and paragraphs the site still has a simple design.`;
+    } else if (fontPairing === 'single_family') {
+        document.getElementById('pairing-explanation').innerHTML = `Pairing two harmonious sans-serif fonts creates and understated look, but by using two different font-families there is still some complexity to the site's design.`;
+    } else {
+        document.getElementById('pairing-explanation').innerHTML = `Using the same font family for both the headings and the paragraphs creates a site design communicates subtlty and simplicity.`;
+    }
+
+    if (textDecoration === 'italicized') {
+        document.getElementById('text-decoration-explanation').innerHTML = `Italics give text a sense of sophistication and delicacy that fits well with more artistic, creative, and/or relaxed sites like portfolios, blogs, organization sites, and personal sites.`;
+    } else {
+        document.getElementById('text-decoration-explanation').innerHTML = `Underlining gives text a sense of importance that best matches sites that demand respect or need to convey urgency, such as student projects, online stores, organization sites, and other informational sites.`;
+    }
+
+    document.getElementById('font-info-box').style.display = 'block';
+    document.getElementById('color-info-box').style.display = 'none';
+    document.getElementById('button-info-box').style.display = 'none';
+}
+buttonInfo.onclick = () => {
+    let buttonFontType, buttonShape;
+    if (buttonFont === fontFamily[0]) {buttonFontType = 'heading';}
+    else {buttonFontType = 'paragraph';}
+
+    if (borderRadius === '0px') {buttonShape = 'squared';}
+    else if (borderRadius === '10px') {buttonShape = 'rounded';}
+    else {buttonShape = 'round';}
+
+    document.getElementById('button-results').innerHTML = `Your Results: ${buttonFontType} font and ${buttonShape} corners`;
+
+    if(bold){
+        document.getElementById('font-explanation').innerHTML = `Because you wanted a bold website, you should use your headings' font for buttons to make them stand out.`;
+    } else {
+        document.getElementById('font-explanation').innerHTML = `Because you wanted an understated website, you should use your paragraphs' font for buttons for a more subtle look.`;
+    }
+
+    if (interactivity === 'lot_buttons') {
+        document.getElementById('border-radius-explanation').innerHTML = `Because you will be using a lot of buttons for your site, squared corners will give the groups of buttons a cleaner and more intentional look.`;
+    } else if (classic) {
+        document.getElementById('border-radius-explanation').innerHTML = `Old-school squared corners will give your site a more classic look compared to the modern flare that come with rounded buttons.`;
+    } else if (serious) {
+        document.getElementById('border-radius-explanation').innerHTML = `Although you want your site to look modern, you still want your site to look serious.  Slightly rounded corners provide the perfect balance between modernity and professionalism.`;
+    } else {
+        document.getElementById('border-radius-explanation').innerHTML = `You want a fun, modern site that won't be cluttered with buttons.  Rounded corners will give your site the fresh, playful look you've been looking for.`;
+    }
+
+    /*<p id="font-explanation">Describe font decision</p>
+        <p id="border-radius-explanation">Describe pattern type and decision</p> */
+
+    document.getElementById('button-info-box').style.display = 'block';
+    document.getElementById('color-info-box').style.display = 'none';
+    document.getElementById('font-info-box').style.display = 'none';
+}
+
+    // hide results
+const colorX = document.getElementById('color-x');
+const fontX = document.getElementById('font-x');
+const buttonX = document.getElementById('button-x');
+
+colorX.onclick = () => {
+    document.getElementById('color-info-box').style.display = 'none';    
+}
+fontX.onclick = () => {
+    document.getElementById('font-info-box').style.display = 'none';    
+}
+buttonX.onclick = () => {
+    document.getElementById('button-info-box').style.display = 'none';    
+}

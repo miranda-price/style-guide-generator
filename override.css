@@ -134,3 +134,16 @@ form > img {
   width: 70%;
   margin: 10px 15%;
 }
+
+.info {
+  display: flex;
+}
+
+.info-button {
+  width: 20px;
+  margin-left: 10px;
+}
+
+#new-palette {
+  margin-left: 100px;
+}
