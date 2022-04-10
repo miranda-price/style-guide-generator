@@ -764,6 +764,7 @@ newPalette.onclick = () => {
 };
 
 // explain results
+    // display results
 const colorInfo = document.getElementById('color-info');
 const fontInfo = document.getElementById('font-info');
 const buttonInfo = document.getElementById('button-info');
@@ -782,4 +783,19 @@ buttonInfo.onclick = () => {
     document.getElementById('button-info-box').style.display = 'block';
     document.getElementById('color-info-box').style.display = 'none';
     document.getElementById('font-info-box').style.display = 'none';
+}
+
+    // hide results
+const colorX = document.getElementById('color-x');
+const fontX = document.getElementById('font-x');
+const buttonX = document.getElementById('button-x');
+
+colorX.onclick = () => {
+    document.getElementById('color-info-box').style.display = 'none';    
+}
+fontX.onclick = () => {
+    document.getElementById('font-info-box').style.display = 'none';    
+}
+buttonX.onclick = () => {
+    document.getElementById('button-info-box').style.display = 'none';    
 }
