@@ -23,7 +23,11 @@ quizButton.onclick = () => {
     document.getElementById('color-info-box').style.display = 'none';
     document.getElementById('font-info-box').style.display = 'none';
     document.getElementById('button-info-box').style.display = 'none';
-    
+
+    quizProgress.ariaValueNow = 0;
+    quizProgress.style.width = '0%';
+    quizProgress.innerHTML = '0%';
+
     document.getElementById("quiz-intro").style.display = 'none';
     document.getElementById("style-guide").style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
@@ -43,6 +47,8 @@ backButton2 = document.getElementById('page2-back');
 backButton3 = document.getElementById('page3-back');
 backButton4 = document.getElementById('page4-back');
 
+const quizProgress = document.getElementById('quiz-progress');
+
 nextButton1.onclick = () => {
     siteType = document.forms['site_quiz']['site_type'].value;
     siteSubject = document.forms['site_quiz']['site_subject'].value;
@@ -60,6 +66,11 @@ nextButton1.onclick = () => {
         document.getElementById('quiz-basics').style.display = 'none';
         document.getElementById('quiz-content').style.display = 'block';
     }
+
+    quizProgress.ariaValueNow = 25;
+    quizProgress.style.width = '25%';
+    quizProgress.innerHTML = '25%';
+
 }
 nextButton2.onclick = () => {
     contentAmount = document.forms['site_quiz']['content_amount'].value;
@@ -83,6 +94,10 @@ nextButton2.onclick = () => {
         document.getElementById('quiz-content').style.display = 'none';
         document.getElementById('quiz-audience').style.display = 'block';
     }
+
+    quizProgress.ariaValueNow = 50;
+    quizProgress.style.width = '50%';
+    quizProgress.innerHTML = '50%';
 }
 nextButton3.onclick = () => {
     audienceAge = document.forms['site_quiz']['audience_age'].value;
@@ -106,19 +121,35 @@ nextButton3.onclick = () => {
         document.getElementById('quiz-audience').style.display = 'none';
     document.getElementById('quiz-feel').style.display = 'block';
     }
+
+    quizProgress.ariaValueNow = 75;
+    quizProgress.style.width = '75%';
+    quizProgress.innerHTML = '75%';
 }
 
 backButton2.onclick = () => {
     document.getElementById('quiz-content').style.display = 'none';
     document.getElementById('quiz-basics').style.display = 'block';
+
+    quizProgress.ariaValueNow = 0;
+    quizProgress.style.width = '0%';
+    quizProgress.innerHTML = '0%';
 }
 backButton3.onclick = () => {
     document.getElementById('quiz-audience').style.display = 'none';
     document.getElementById('quiz-content').style.display = 'block';
+
+    quizProgress.ariaValueNow = 25;
+    quizProgress.style.width = '25%';
+    quizProgress.innerHTML = '25%';
 }
 backButton4.onclick = () => {
     document.getElementById('quiz-feel').style.display = 'none';
     document.getElementById('quiz-audience').style.display = 'block';
+
+    quizProgress.ariaValueNow = 25;
+    quizProgress.style.width = '50%';
+    quizProgress.innerHTML = '50%';
 }
 
 // style guide generator
