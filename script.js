@@ -266,6 +266,8 @@ const colorGen = () => {
             primaryColor = 'brown';
         } else if (moodSecondary === 'welcoming_secondary') {
             primaryColor = 'pink';
+        } else if (moodSecondary === 'sophisticated_secondary') {
+            primaryColor = 'red';
         } else {primaryColor = 'red';}
     } else if (moodPrimary === 'calm_primary' || moodPrimary === 'cheerful_primary') {
         if (moodSecondary === 'energized_secondary' || moodSecondary === 'cheerful_secondary') {
@@ -274,9 +276,11 @@ const colorGen = () => {
             primaryColor = 'blue';
         } else if (moodSecondary === 'welcoming_secondary') {
             primaryColor = 'green';
+        } else if(moodSecondary === 'sophisticated_secondary') {
+            primaryColor = 'purple';
         } else {primaryColor = 'blue';}
     } else {
-        if (moodSecondary === 'energetic_secondary' || moodPrimary === 'trustworthy_secondary' || moodPrimary === 'welcoming_secondary') {primaryColor = 'red';}
+        if (moodSecondary === 'energetic_secondary' || moodSecondary === 'trustworthy_secondary' || moodSecondary === 'welcoming_secondary') {primaryColor = 'red';}
         else {primaryColor = 'purple'}
     }
 
