@@ -770,10 +770,31 @@ const fontInfo = document.getElementById('font-info');
 const buttonInfo = document.getElementById('button-info');
 
 colorInfo.onclick = () => {
-    let darkLight;
+    let darkLight, warmCool;
     if (darkMode === true) {darkLight = 'dark';}
     else {darkLight = 'light';}
+
+    if(primaryColor === 'red' || primaryColor === 'pink' || primaryColor === 'orange' || primaryColor === 'yellow' || primaryColor === 'brown') {warmCool = 'warm';}
+    else {warmCool = 'cool';}
+
     document.getElementById('color-results').innerHTML = `Your Results: ${primaryColor} ${palettePattern} palette, ${darkLight} mode`;
+
+    document.getElementById('warm-cool-explanation').innerHTML = `Your site's primary emotion, ${moodPrimary}, fits best with ${warmCool} colors.`;
+
+    if (primaryColor === 'orange') {document.getElementById('color-explanation').innerHTML = `Orange is an energetic color, which matches your site's secondary emotion`;}
+    else if (primaryColor === 'red' && moodPrimary != 'sophisticated') {document.getElementById('color-explanation').innerHTML = `Red is an sophisticated color, which matches your site's secondary emotion`;}
+    else if (primaryColor === 'red') {document.getElementById('color-explanation').innerHTML = `Red is a very ${moodSecondary} color, which matches your site's secondary emotion`;}
+    else if (primaryColor === 'yellow') {document.getElementById('color-explanation').innerHTML = `Yellow is a very ${moodSecondary} color, which matches your site's secondary emotion`;}
+    else if (primaryColor === 'brown') {document.getElementById('color-explanation').innerHTML = `Brown is a very ${moodSecondary} color, which matches your site's secondary emotion`;}
+    else if (primaryColor === 'pink') {document.getElementById('color-explanation').innerHTML = `Pink is a very ${moodSecondary} color, which matches your site's secondary emotion`;}
+    else if (primaryColor === 'purple' && moodPrimary != 'sophisticated') {document.getElementById('color-explanation').innerHTML = `Purple is an sophisticated color, which matches your site's secondary emotion`;}
+    else if (primaryColor === 'purple') {document.getElementById('color-explanation').innerHTML = `Purple is a very ${moodSecondary} color, which matches your site's secondary emotion`;}
+    else if (primaryColor === 'blue') {document.getElementById('color-explanation').innerHTML = `Blue is a very ${moodSecondary} color, which matches your site's secondary emotion`;}
+    else if (primaryColor === 'green') {document.getElementById('color-explanation').innerHTML = `Green is a very ${moodSecondary} color, which matches your site's secondary emotion`;}
+    else {document.getElementById('color-explanation').innerHTML = `Teal is a very ${moodSecondary} color, which matches your site's secondary emotion`;}
+
+    /* <p id="pattern-explanation">Describe pattern type and decision</p>
+        <p id="dark-mode-explanation">Describe dark vs light mode decision</p> */
 
     document.getElementById('color-info-box').style.display = 'block';
     document.getElementById('font-info-box').style.display = 'none';
@@ -801,10 +822,6 @@ fontInfo.onclick = () => {
     } else {
         document.getElementById('text-decoration-explanation').innerHTML = `Underlining gives text a sense of importance that best matches sites that demand respect or need to convey urgency, such as student projects, online stores, organization sites, and other informational sites.`;
     }
-
-    /*<p id="pairing-explanation">Describe color decision</p>
-        <p>Font pairing is a built-in pairing for Wix site design customization.</p>
-        <p id="text-decoration-explanation">Describe dark vs light mode decision</p>*/
 
     document.getElementById('font-info-box').style.display = 'block';
     document.getElementById('color-info-box').style.display = 'none';
