@@ -20,6 +20,10 @@ createButton3.onclick = quizIntro;
 const quizButton = document.getElementById('take-quiz');
 
 quizButton.onclick = () => {
+    document.getElementById('color-info-box').style.display = 'none';
+    document.getElementById('font-info-box').style.display = 'none';
+    document.getElementById('button-info-box').style.display = 'none';
+    
     document.getElementById("quiz-intro").style.display = 'none';
     document.getElementById("style-guide").style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
@@ -764,6 +768,9 @@ const display = () => {
 
 const newPalette = document.getElementById('new-palette');
 newPalette.onclick = () => {
+    document.getElementById('color-info-box').style.display = 'none';
+    document.getElementById('font-info-box').style.display = 'none';
+    document.getElementById('button-info-box').style.display = 'none';
     colorGen();
 };
 
