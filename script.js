@@ -783,7 +783,28 @@ fontInfo.onclick = () => {
     let textDecoration;
     if (italics === true) {textDecoration = 'italicized';}
     else {textDecoration = 'underlined';}
+
     document.getElementById('font-results').innerHTML = `Your Results: ${fontFamily[0]} headings and ${fontFamily[1]} paragraphs, with ${textDecoration} text`;
+
+    if (fontPairing === 'serif_sans') {
+        document.getElementById('pairing-explanation').innerHTML = `A serif font paired with a sans-serif font creates the most contrast between headings and paragraphs, contributing to the bold and complicated feel you want for your site.`;
+    } else if (fontPairing === 'sans_contrast') {
+        document.getElementById('pairing-explanation').innerHTML = `Pairing two contrasting sans-serif fonts creates a bold site design, however by using sans-serif fonts for both headings and paragraphs the site still has a simple design.`;
+    } else if (fontPairing === 'single_family') {
+        document.getElementById('pairing-explanation').innerHTML = `Pairing two harmonious sans-serif fonts creates and understated look, but by using two different font-families there is still some complexity to the site's design.`;
+    } else {
+        document.getElementById('pairing-explanation').innerHTML = `Using the same font family for both the headings and the paragraphs creates a site design communicates subtlty and simplicity.`;
+    }
+
+    if (textDecoration === 'italicized') {
+        document.getElementById('text-decoration-explanation').innerHTML = `Italics give text a sense of sophistication and delicacy that fits well with more artistic, creative, and/or relaxed sites like portfolios, blogs, organization sites, and personal sites.`;
+    } else {
+        document.getElementById('text-decoration-explanation').innerHTML = `Underlining gives text a sense of importance that best matches sites that demand respect or need to convey urgency, such as student projects, online stores, organization sites, and other informational sites.`;
+    }
+
+    /*<p id="pairing-explanation">Describe color decision</p>
+        <p>Font pairing is a built-in pairing for Wix site design customization.</p>
+        <p id="text-decoration-explanation">Describe dark vs light mode decision</p>*/
 
     document.getElementById('font-info-box').style.display = 'block';
     document.getElementById('color-info-box').style.display = 'none';
