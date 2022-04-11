@@ -56,6 +56,7 @@ h4 {font-size: 20px;}
   width: 50px;
   height: 50px;
   position: absolute;
+  transition: all 4s;
 }
 
 .carousel-inner, #quiz-intro-inner {

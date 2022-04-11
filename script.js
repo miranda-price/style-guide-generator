@@ -30,37 +30,13 @@ for (let dot in dots) {
 
 document.getElementById('dot-div').style.display = 'block';
 
-let animationArgs = new Array(dots.length);
-let speed, angle, vw, vh;
-let counter = 0;
-
-for (let dot in dots) {
-    speed = Math.floor(Math.random()*10)-5;
-    angle = Math.floor(Math.random()*360);
-    animationArgs[dot] = [dots[dot], Math.floor(Math.cos(angle)*(speed)), Math.floor(Math.sin(angle)*(speed)), (speed), angle];
-    if (animationArgs[dot][1] === 0) {animationArgs[dot][1] = -1;}
-    if (animationArgs[dot][2] === 0) {animationArgs[dot][2] = 1;}
-}
-
-const newArgs = function() {
-    for (let dot in dots) {
-        animationArgs[dot][1] = animationArgs[dot][1]*-1;
-        animationArgs[dot][2] = animationArgs[dot][2]*-1;
-    }
-};
-
 const idle = function () {
-    let transform = setInterval (function () {
-        if (counter === 200) {clearInterval(transform);}
-        vw = window.innerWidth;
-        vh = window.innerHeight;
-        for (let dot in animationArgs) {
-            animationArgs[dot][0].style.left = `${animationArgs[dot][0].offsetLeft+animationArgs[dot][1]}px`;
-            animationArgs[dot][0].style.top = `${animationArgs[dot][0].offsetTop+animationArgs[dot][2]}px`;
-        }
-        counter++;
-    }, 20);
-    newArgs();
+    for (let dot in dots) {
+        x = Math.round(Math.random()*100);
+        dots[dot].style.top = `${x}vh`;
+        y = Math.round(Math.random()*100);
+        dots[dot].style.left = `${y}vw`;
+    }
 }
 setInterval(idle, 4000);
 
