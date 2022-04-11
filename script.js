@@ -14,8 +14,18 @@ const dot12 = document.getElementById('dot12');
 const dot13 = document.getElementById('dot13');
 const dot14 = document.getElementById('dot14');
 const dot15 = document.getElementById('dot15');
+const dot16 = document.getElementById('dot16');
+const dot17 = document.getElementById('dot17');
+const dot18 = document.getElementById('dot18');
+const dot19 = document.getElementById('dot19');
+const dot20 = document.getElementById('dot20');
+const dot21 = document.getElementById('dot21');
+const dot22 = document.getElementById('dot22');
+const dot23 = document.getElementById('dot23');
+const dot24 = document.getElementById('dot24');
+const dot25 = document.getElementById('dot25');
 
-let dots = [dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10, dot11, dot12, dot13, dot14, dot15];
+let dots = [dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10, dot11, dot12, dot13, dot14, dot15, dot16, dot17, dot18, dot19, dot20, dot21, dot22, dot23, dot24, dot25];
 
 for (let dot in dots) {
     let r = Math.round(Math.random()*150) + 50;
