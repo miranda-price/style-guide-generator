@@ -75,6 +75,8 @@ quizButton.onclick = () => {
     document.getElementById('color-info-box').style.display = 'none';
     document.getElementById('font-info-box').style.display = 'none';
     document.getElementById('button-info-box').style.display = 'none';
+    document.getElementById('what-info-box').style.display = 'none';
+    document.getElementById('how-info-box').style.display = 'none';
 
     quizProgress.ariaValueNow = 0;
     quizProgress.style.width = '0%';
@@ -171,7 +173,7 @@ nextButton3.onclick = () => {
         document.getElementById('mood_primary_error').style.visibility = 'hidden';
         document.getElementById('mood_secondary_error').style.visibility = 'hidden';
         document.getElementById('quiz-audience').style.display = 'none';
-    document.getElementById('quiz-feel').style.display = 'block';
+        document.getElementById('quiz-feel').style.display = 'block';
     }
 
     quizProgress.ariaValueNow = 75;
@@ -854,10 +856,13 @@ newPalette.onclick = () => {
     document.getElementById('color-info-box').style.display = 'none';
     document.getElementById('font-info-box').style.display = 'none';
     document.getElementById('button-info-box').style.display = 'none';
+    document.getElementById('what-info-box').style.display = 'none';
+    document.getElementById('how-info-box').style.display = 'none';
     colorGen();
 };
 
 // explain style guide
+    // display explanations
 const whatStyleGuide = document.getElementById('what-style-guide');
 const howStyleGuide = document.getElementById('how-style-guide');
 const howStyleGuide2 = document.getElementById('how-style-guide');
@@ -875,6 +880,18 @@ howStyleGuide.onclick = () => {
 howStyleGuide2.onclick = () => {
     document.getElementById('what-info-box').style.display = 'none';
     document.getElementById('how-info-box').style.display = 'block';
+}
+
+    // hide explanations
+const whatStyleGuideX = document.getElementById('what-x');
+const howStyleGuideX = document.getElementById('how-x');
+
+whatStyleGuideX.onclick = () => {
+    document.getElementById('what-info-box').style.display = 'none';
+}
+
+howStyleGuideX.onclick = () => {
+    document.getElementById('how-info-box').style.display = 'none';
 }
 
 // explain results
@@ -920,6 +937,8 @@ colorInfo.onclick = () => {
     document.getElementById('color-info-box').style.display = 'block';
     document.getElementById('font-info-box').style.display = 'none';
     document.getElementById('button-info-box').style.display = 'none';
+    document.getElementById('what-info-box').style.display = 'none';
+    document.getElementById('how-info-box').style.display = 'none';
 }
 fontInfo.onclick = () => {
     let textDecoration;
@@ -947,6 +966,8 @@ fontInfo.onclick = () => {
     document.getElementById('font-info-box').style.display = 'block';
     document.getElementById('color-info-box').style.display = 'none';
     document.getElementById('button-info-box').style.display = 'none';
+    document.getElementById('what-info-box').style.display = 'none';
+    document.getElementById('how-info-box').style.display = 'none';
 }
 buttonInfo.onclick = () => {
     let buttonFontType, buttonShape;
@@ -981,6 +1002,8 @@ buttonInfo.onclick = () => {
     document.getElementById('button-info-box').style.display = 'block';
     document.getElementById('color-info-box').style.display = 'none';
     document.getElementById('font-info-box').style.display = 'none';
+    document.getElementById('what-info-box').style.display = 'none';
+    document.getElementById('how-info-box').style.display = 'none';
 }
 
     // hide results
