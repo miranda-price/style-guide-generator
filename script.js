@@ -865,7 +865,7 @@ newPalette.onclick = () => {
     // display explanations
 const whatStyleGuide = document.getElementById('what-style-guide');
 const howStyleGuide = document.getElementById('how-style-guide');
-const howStyleGuide2 = document.getElementById('how-style-guide');
+const howStyleGuide2 = document.getElementById('how-use-style-guide');
 
 whatStyleGuide.onclick = () => {
     document.getElementById('what-info-box').style.display = 'block';
