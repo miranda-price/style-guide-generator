@@ -857,6 +857,26 @@ newPalette.onclick = () => {
     colorGen();
 };
 
+// explain style guide
+const whatStyleGuide = document.getElementById('what-style-guide');
+const howStyleGuide = document.getElementById('how-style-guide');
+const howStyleGuide2 = document.getElementById('how-style-guide');
+
+whatStyleGuide.onclick = () => {
+    document.getElementById('what-info-box').style.display = 'block';
+    document.getElementById('how-info-box').style.display = 'none';
+}
+
+howStyleGuide.onclick = () => {
+    document.getElementById('what-info-box').style.display = 'none';
+    document.getElementById('how-info-box').style.display = 'block';
+}
+
+howStyleGuide2.onclick = () => {
+    document.getElementById('what-info-box').style.display = 'none';
+    document.getElementById('how-info-box').style.display = 'block';
+}
+
 // explain results
     // display results
 const colorInfo = document.getElementById('color-info');
