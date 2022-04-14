@@ -155,5 +155,5 @@ form > img {
 }
 
 #new-palette {
-  margin-left: 100px;
+  margin-left: min(12%, 100px);
 }
