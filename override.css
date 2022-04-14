@@ -157,3 +157,9 @@ form > img {
 #new-palette {
   margin-left: min(12%, 100px);
 }
+
+@media (max-width: 767px) {
+  .form-page {
+    width: 90%;
+  }
+}
