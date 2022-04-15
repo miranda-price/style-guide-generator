@@ -682,15 +682,15 @@ const buttonGen = () => {
 
     // secondary button
     buttonSecondary.style.borderRadius = borderRadius;
-    buttonSecondary.style.color = color3;
-    buttonSecondary.style.border = `1px solid ${color3}`;
+    buttonSecondary.style.color = color2;
+    buttonSecondary.style.border = `1px solid ${color2}`;
     buttonSecondary.style.boxShadow = '0px 4px 4px rgba(0, 0, 0, 0.25)';
     buttonSecondary.style.fontFamily = buttonFont;
-    buttonDescSecondary.innerHTML = `No fill, 1px ${color3} border, border-radius ${borderRadius}, drop shadow, 36px ${buttonFont} ${color3}`
+    buttonDescSecondary.innerHTML = `No fill, 1px ${color2} border, border-radius ${borderRadius}, drop shadow, 36px ${buttonFont} ${color2}`
 
     // tertiary button
-    buttonTertiary.style.color = color3;
-    buttonDescTertiary.innerHTML = `No fill or border, drop shadow, 36px ${buttonFont} ${color3}, underlined`
+    buttonTertiary.style.color = color2;
+    buttonDescTertiary.innerHTML = `No fill or border, drop shadow, 36px ${buttonFont} ${color2}, underlined`
     buttonTertiary.style.fontFamily = buttonFont;
 }
 
@@ -853,11 +853,6 @@ const display = () => {
 
 const newPalette = document.getElementById('new-palette');
 newPalette.onclick = () => {
-    document.getElementById('color-info-box').style.display = 'none';
-    document.getElementById('font-info-box').style.display = 'none';
-    document.getElementById('button-info-box').style.display = 'none';
-    document.getElementById('what-info-box').style.display = 'none';
-    document.getElementById('how-info-box').style.display = 'none';
     colorGen();
 };
 
@@ -919,23 +914,23 @@ colorInfo.onclick = () => {
     if (palettePattern === 'triadic') {
         if (darkMode) {document.getElementById('palette-guide').src = './img/palette_guides_triadic-dark.svg';}
         else {document.getElementById('palette-guide').src = './img/palette_guides_triadic-light.svg';}
-        document.getElementById('pattern-explanation').innerHTML = `Triadic palettes are based on three colors equally spaced on the color wheel.  Triadic palettes are seen as energetic and cheerful.`;
+        document.getElementById('pattern-explanation').innerHTML = `Triadic palettes are based on three colors equally spaced on the color wheel (see diagram).  Triadic palettes are seen as energetic and cheerful.`;
     } else if (palettePattern === 'split') {
         if (darkMode) {document.getElementById('palette-guide').src = './img/palette_guides_split-dark.svg';}
         else {document.getElementById('palette-guide').src = './img/palette_guides_split-light.svg';}
-        document.getElementById('pattern-explanation').innerHTML = `Split-complementary palettes are based on an main color and two neighboring colors on the opposite side of the color wheel.  Split-complementary palettes are seen as bold and somewhat complex, while also adding a fun, playful feel to a design.`;
+        document.getElementById('pattern-explanation').innerHTML = `Split-complementary palettes are based on an main color and two neighboring colors on the opposite side of the color wheel (see diagram).  Split-complementary palettes are seen as bold and somewhat complex, while also adding a fun, playful feel to a design.`;
     } else if (palettePattern === 'complementary') {
         if (darkMode) {document.getElementById('palette-guide').src = './img/palette_guides_complementary-dark.svg';}
         else {document.getElementById('palette-guide').src = './img/palette_guides_complementary-light.svg';}
-        document.getElementById('pattern-explanation').innerHTML = `Complementary palettes are based on two colors that are opposite each other on the color wheel.  Complementary palettes are seen as bold, while still relatively simple.`;
+        document.getElementById('pattern-explanation').innerHTML = `Complementary palettes are based on two colors that are opposite each other on the color wheel (see diagram).  Complementary palettes are seen as bold, while still relatively simple.`;
     } else if (palettePattern === 'analogous') {
         if (darkMode) {document.getElementById('palette-guide').src = './img/palette_guides_analogous-dark.svg';}
         else {document.getElementById('palette-guide').src = './img/palette_guides_analogous-light.svg';}
-        document.getElementById('pattern-explanation').innerHTML = `Analogous palettes are based on three colors located next to each other on the color wheel.  Analogous palettes are seen as calming.`;
+        document.getElementById('pattern-explanation').innerHTML = `Analogous palettes are based on three colors located next to each other on the color wheel (see diagram).  Analogous palettes are seen as calming.`;
     } else {
         if (darkMode) {document.getElementById('palette-guide').src = './img/palette_guides_monochromatic-dark.svg';}
         else {document.getElementById('palette-guide').src = './img/palette_guides_monochromatic-light.svg';}
-        document.getElementById('pattern-explanation').innerHTML = `Monochromatic palettes are all based on the same color.  Monochromatic palettes are seen as sophisticated and serious, but realistically work well for just about any design.`;
+        document.getElementById('pattern-explanation').innerHTML = `Monochromatic palettes are all based on the same color (see diagram).  Monochromatic palettes are seen as sophisticated and serious, but realistically work well for just about any design.`;
     }
 
     if (darkLight === 'dark') {
@@ -943,12 +938,6 @@ colorInfo.onclick = () => {
     } else {
         document.getElementById('dark-mode-explanation').innerHTML = `Dark mode sites are best suited for sites not related to entertainment or technology, older audiences, sites a lot of content, and sites that are more textual than visual.`;      
     }
-
-    document.getElementById('color-info-box').style.display = 'block';
-    document.getElementById('font-info-box').style.display = 'none';
-    document.getElementById('button-info-box').style.display = 'none';
-    document.getElementById('what-info-box').style.display = 'none';
-    document.getElementById('how-info-box').style.display = 'none';
 }
 fontInfo.onclick = () => {
     let textDecoration;
@@ -972,12 +961,6 @@ fontInfo.onclick = () => {
     } else {
         document.getElementById('text-decoration-explanation').innerHTML = `Underlining gives text a sense of importance that best matches sites that demand respect or need to convey urgency, such as student projects, online stores, organization sites, and other informational sites.`;
     }
-
-    document.getElementById('font-info-box').style.display = 'block';
-    document.getElementById('color-info-box').style.display = 'none';
-    document.getElementById('button-info-box').style.display = 'none';
-    document.getElementById('what-info-box').style.display = 'none';
-    document.getElementById('how-info-box').style.display = 'none';
 }
 buttonInfo.onclick = () => {
     let buttonFontType, buttonShape;
@@ -1005,28 +988,4 @@ buttonInfo.onclick = () => {
     } else {
         document.getElementById('border-radius-explanation').innerHTML = `You want a fun, modern site that won't be cluttered with buttons.  Rounded corners will give your site the fresh, playful look you've been looking for.`;
     }
-
-    /*<p id="font-explanation">Describe font decision</p>
-        <p id="border-radius-explanation">Describe pattern type and decision</p> */
-
-    document.getElementById('button-info-box').style.display = 'block';
-    document.getElementById('color-info-box').style.display = 'none';
-    document.getElementById('font-info-box').style.display = 'none';
-    document.getElementById('what-info-box').style.display = 'none';
-    document.getElementById('how-info-box').style.display = 'none';
-}
-
-    // hide results
-const colorX = document.getElementById('color-x');
-const fontX = document.getElementById('font-x');
-const buttonX = document.getElementById('button-x');
-
-colorX.onclick = () => {
-    document.getElementById('color-info-box').style.display = 'none';    
-}
-fontX.onclick = () => {
-    document.getElementById('font-info-box').style.display = 'none';    
-}
-buttonX.onclick = () => {
-    document.getElementById('button-info-box').style.display = 'none';    
 }

@@ -327,6 +327,70 @@
     </form>
 </div>
 
+<div class="modal fade" id="color-info-box" tabindex="-1" aria-labelledby="color-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="color-modal">Colors</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <strong><p id="color-results">Your Results: color and palette pattern, dark mode</p></strong>
+            <p id="warm-cool-explanation">Describe warm vs cool decision</p>
+            <div class="row">
+                <p id="color-explanation">Describe color decision</p>
+                <img src="" class="col-md-4" id="palette-guide">
+                <p id="pattern-explanation" class="col-md-8">Describe pattern type and decision</p>
+            </div>
+            <p>Palette is five colors and are ordered to best fit Wix site customization format.</p>
+            <p id="dark-mode-explanation">Describe dark vs light mode decision</p>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+
+<div class="modal fade" id="font-info-box" tabindex="-1" aria-labelledby="font-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="font-modal">Fonts</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <strong><p id="font-results">Your Results: heading font, paragraph font, and text decoration</p></strong>
+            <p id="pairing-explanation">Describe color decision</p>
+            <p>This font pairing is a built-in pairing for Wix site design customization.</p>
+            <p id="text-decoration-explanation">Describe dark vs light mode decision</p>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+
+<div class="modal fade" id="button-info-box" tabindex="-1" aria-labelledby="button-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="button-modal">Buttons</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <strong><p id="button-results">Your Results: font choice and border radius</p></strong>
+            <p id="font-explanation">Describe font decision</p>
+            <p id="border-radius-explanation">Describe pattern type and decision</p>
+            <p>There are three types of buttons with corresponding styles:</p>
+            <ul>
+                <li><strong>Raised Button (primary):</strong> These buttons are solid-colored with a shadow to give a more 3D, realistic feel.  Raised buttons draw users' attention, especially using the accent color (color 3), and makes the buttons' actions feel important.</li>
+                <li><strong>Ghost Button (secondary):</strong> These buttons have no background, using a border instead.  These buttons can still have a shadow for a realistic feel.  Ghost buttons feel less urgent than raised ones, making them ideal for secondary actions.</li>
+                <li><strong>Links (tertiary):</strong> While technically not buttons, links can add interactivity to a site beyond linking to another site.  Links are ideal for in-text interactivity or dialog boxes.  The key design goal with links is to have them stand out from their surrounding text without being too distracting.  Underlined text in a different color is enough to visually signify links on websites.</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+
 <div id="style-guide" class="grid-container", style="display: none;">
     <div class="info">
         <h2 id="style-guide-heading">Style Guide</h2>
@@ -334,42 +398,7 @@
         <button class="btn btn-link" id="how-style-guide">How to Use</button>
     </div>
     <hr>
-    <div class="info-box" id="color-info-box" style="display: none;">
-        <img src="./icons/x-circle-fill.svg" id="color-x" class="x-icon">
-        <h3>Color</h3>
-        <strong><p id="color-results">Your Results: color and palette pattern, dark mode</p></strong>
-        <p id="warm-cool-explanation">Describe warm vs cool decision</p>
-        <div class="row">
-            <img src="" class="col-md-2" id="palette-guide">
-            <div class="col-md-10">
-                <p id="color-explanation">Describe color decision</p>
-                <p id="pattern-explanation">Describe pattern type and decision</p>
-            </div>
-        </div>
-        <p>Palette is five colors and are ordered to best fit Wix site customization format.</p>
-        <p id="dark-mode-explanation">Describe dark vs light mode decision</p>
-    </div>
-    <div class="info-box" id="font-info-box" style="display: none;">
-        <img src="./icons/x-circle-fill.svg" id="font-x" class="x-icon">
-        <h3>Fonts</h3>
-        <strong><p id="font-results">Your Results: heading font, paragraph font, and text decoration</p></strong>
-        <p id="pairing-explanation">Describe color decision</p>
-        <p>This font pairing is a built-in pairing for Wix site design customization.</p>
-        <p id="text-decoration-explanation">Describe dark vs light mode decision</p>
-    </div>
-    <div class="info-box" id="button-info-box" style="display: none;">
-        <img src="./icons/x-circle-fill.svg" id="button-x" class="x-icon">
-        <h3>Buttons</h3>
-        <strong><p id="button-results">Your Results: font choice and border radius</p></strong>
-        <p id="font-explanation">Describe font decision</p>
-        <p id="border-radius-explanation">Describe pattern type and decision</p>
-        <p>There are three types of buttons with corresponding styles:</p>
-        <ul>
-            <li><strong>Raised Button (primary):</strong> These buttons are solid-colored with a shadow to give a more 3D, realistic feel.  Raised buttons draw users' attention, especially using the accent color (color 3), and makes the buttons' actions feel important.</li>
-            <li><strong>Ghost Button (secondary):</strong> These buttons have no background, using a border instead.  These buttons can still have a shadow for a realistic feel.  Ghost buttons feel less urgent than raised ones, making them ideal for secondary actions.</li>
-            <li><strong>Links (tertiary):</strong> While technically not buttons, links can add interactivity to a site beyond linking to another site.  Links are ideal for in-text interactivity or dialog boxes.  The key design goal with links is to have them stand out from their surrounding text without being too distracting.  Underlined text in a different color is enough to visually signify links on websites.</li>
-        </ul>
-    </div>
+
     <div class="info-box" id="what-info-box" style="display: none;">
         <img src="./icons/x-circle-fill.svg" id="what-x" class="x-icon">
         <h3>What is a Style Guide?</h3>
@@ -453,7 +482,7 @@
         <div id="colorDiv" class="col-md-7">
             <div class="info">
                 <h3>Colors</h3>
-                <img src="./icons/info-circle-fill.svg" id="color-info" class="info-button">
+                <img src="./icons/info-circle-fill.svg" id="color-info" class="info-button" data-bs-toggle="modal" data-bs-target="#color-info-box">
                 <button class="btn btn-outline-dark" id="new-palette">Generate New</button>
             </div>
             <div class="grid-container palette">
@@ -523,7 +552,7 @@
         <div id="fontDiv" class="col-md-5">
             <div class="info">
                 <h3>Fonts</h3>
-                <img src="./icons/info-circle-fill.svg" id="font-info" class="info-button">
+                <img src="./icons/info-circle-fill.svg" id="font-info" class="info-button" data-bs-toggle="modal" data-bs-target="#font-info-box">
             </div>
             <h4 id="h1">HEADING 1</h4>
             <p id="h1Desc">Font description</p>
@@ -549,7 +578,7 @@
         <div id="buttonDiv" class="row">
             <div class="info">
             <h3>Buttons</h3>
-                <img src="./icons/info-circle-fill.svg" id="button-info" class="info-button">
+                <img src="./icons/info-circle-fill.svg" id="button-info" class="info-button" data-bs-toggle="modal" data-bs-target="#button-info-box">
                 </div>
             <div class="col-md-4">
                 <div class="row">
