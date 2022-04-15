@@ -58,9 +58,13 @@ const createButton3 = document.getElementById('create-guide3');
 
 let quizIntro = () => {
     document.getElementById("quiz-intro").style.display = 'block';
+    document.getElementById("quiz-intro").ariaHidden = 'false';
     createButton1.style.display = 'none';
     createButton2.style.display = 'none';
     createButton3.style.display = 'none';
+    createButton1.ariaHidden = 'true';
+    createButton2.ariaHidden = 'true';
+    createButton3.ariaHidden = 'true';
     document.getElementById('quiz-intro').scrollIntoView({behavior:'smooth'});
 }
 
@@ -72,12 +76,6 @@ createButton3.onclick = quizIntro;
 const quizButton = document.getElementById('take-quiz');
 
 quizButton.onclick = () => {
-    document.getElementById('color-info-box').style.display = 'none';
-    document.getElementById('font-info-box').style.display = 'none';
-    document.getElementById('button-info-box').style.display = 'none';
-    document.getElementById('what-info-box').style.display = 'none';
-    document.getElementById('how-info-box').style.display = 'none';
-
     quizProgress.ariaValueNow = 0;
     quizProgress.style.width = '0%';
     quizProgress.innerHTML = '0%';
@@ -85,9 +83,14 @@ quizButton.onclick = () => {
     document.getElementById("quiz-intro").style.display = 'none';
     document.getElementById("style-guide").style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
+    document.getElementById("quiz-intro").ariaHidden = 'true';
+    document.getElementById("style-guide").ariaHidden = 'true';
+    document.getElementById('quiz-container').ariaHidden = 'false';
     document.getElementById('quiz-container').scrollIntoView({behavior:'smooth'});
     document.getElementById('quiz-feel').style.display = 'none';
     document.getElementById('quiz-basics').style.display = 'block';
+    document.getElementById('quiz-feel').ariaHidden = 'true';
+    document.getElementById('quiz-basics').ariaHidden = 'false';
     document.getElementById('quiz-heading').innerHTML = 'Want to Try Again?';
     document.getElementById('quiz-desc').innerHTML = 'Take a few more minutes to tell us about your site again and we’ll create a new and improved design for you.';
     quizButton.innerHTML = 'Retake the Quiz';
@@ -110,15 +113,27 @@ nextButton1.onclick = () => {
     if(siteType === '' || siteSubject === '') {
         if (siteType === '') {
             document.getElementById('site_type_error').style.visibility = 'visible';
-        } else {document.getElementById('site_type_error').style.visibility = 'hidden';}
+            document.getElementById('site_type_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('site_type_error').style.visibility = 'hidden';
+            document.getElementById('site_type_error').ariaHidden = 'true';
+        }
         if (siteSubject === '') {
             document.getElementById('site_subject_error').style.visibility = 'visible';
-        } else {document.getElementById('site_subject_error').style.visibility = 'hidden';}
+            document.getElementById('site_subject_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('site_subject_error').style.visibility = 'hidden';
+            document.getElementById('site_subject_error').ariaHidden = 'true';
+        }
     } else {
         document.getElementById('site_type_error').style.visibility = 'hidden';
         document.getElementById('site_subject_error').style.visibility = 'hidden';
+        document.getElementById('site_type_error').ariaHidden = 'true';
+        document.getElementById('site_subject_error').ariaHidden = 'true';
         document.getElementById('quiz-basics').style.display = 'none';
         document.getElementById('quiz-content').style.display = 'block';
+        document.getElementById('quiz-basics').ariaHidden = 'true';
+        document.getElementById('quiz-content').ariaHidden = 'false';
     }
 
     quizProgress.ariaValueNow = 25;
@@ -134,19 +149,36 @@ nextButton2.onclick = () => {
     if(contentAmount === '' || contentType === '' || interactivity === '') {
         if (contentAmount === '') {
             document.getElementById('content_amount_error').style.visibility = 'visible';
-        } else {document.getElementById('content_amount_error').style.visibility = 'hidden';}
+            document.getElementById('content_amount_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('content_amount_error').style.visibility = 'hidden';
+            document.getElementById('content_amount_error').ariaHidden = 'true';
+        }
         if (contentType === '') {
             document.getElementById('content_type_error').style.visibility = 'visible';
-        } else {document.getElementById('content_type_error').style.visibility = 'hidden';}
+            document.getElementById('content_type_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('content_type_error').style.visibility = 'hidden';
+            document.getElementById('content_type_error').ariaHidden = 'true';
+        }
         if (interactivity === '') {
             document.getElementById('interactivity_error').style.visibility = 'visible';
-        } else {document.getElementById('interactivity_error').style.visibility = 'hidden';}
+            document.getElementById('interactivity_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('interactivity_error').style.visibility = 'hidden';
+            document.getElementById('interactivity_error').ariaHidden = 'true';
+        }
     } else {
         document.getElementById('content_amount_error').style.visibility = 'hidden';
         document.getElementById('content_type_error').style.visibility = 'hidden';
         document.getElementById('interactivity_error').style.visibility = 'hidden';
+        document.getElementById('content_amount_error').ariaHidden = 'true';
+        document.getElementById('content_type_error').ariaHidden = 'true';
+        document.getElementById('interactivity_error').ariaHidden = 'true';
         document.getElementById('quiz-content').style.display = 'none';
         document.getElementById('quiz-audience').style.display = 'block';
+        document.getElementById('quiz-content').ariaHidden = 'true';
+        document.getElementById('quiz-audience').ariaHidden = 'false';
     }
 
     quizProgress.ariaValueNow = 50;
@@ -161,19 +193,36 @@ nextButton3.onclick = () => {
     if(audienceAge === '' || moodPrimary === '' || moodSecondary === '') {
         if (audienceAge === '') {
             document.getElementById('audience_age_error').style.visibility = 'visible';
-        } else {document.getElementById('audience_age_error').style.visibility = 'hidden';}
+            document.getElementById('audeince_age_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('audience_age_error').style.visibility = 'hidden';
+            document.getElementById('audience_age_error').ariaHidden = 'true';
+        }
         if (moodPrimary === '') {
             document.getElementById('mood_primary_error').style.visibility = 'visible';
-        } else {document.getElementById('mood_primary_error').style.visibility = 'hidden';}
+            document.getElementById('mood_primary_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('mood_primary_error').style.visibility = 'hidden';
+            document.getElementById('mood_primary_error').ariaHidden = 'true';
+        }
         if (moodSecondary === '') {
             document.getElementById('mood_secondary_error').style.visibility = 'visible';
-        } else {document.getElementById('mood_secondary_error').style.visibility = 'hidden';}
+            document.getElementById('mood_secondary_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('mood_secondary_error').style.visibility = 'hidden';
+            document.getElementById('mood_secondary_error').ariaHidden = 'true';
+        }
     } else {
         document.getElementById('audience_age_error').style.visibility = 'hidden';
         document.getElementById('mood_primary_error').style.visibility = 'hidden';
         document.getElementById('mood_secondary_error').style.visibility = 'hidden';
+        document.getElementById('audience_age_error').ariaHidden = 'true';
+        document.getElementById('mood_primary_error').ariaHidden = 'true';
+        document.getElementById('mood_secondary_error').ariaHidden = 'true';
         document.getElementById('quiz-audience').style.display = 'none';
         document.getElementById('quiz-feel').style.display = 'block';
+        document.getElementById('quiz-audience').ariaHidden = 'true';
+        document.getElementById('quiz-feel').ariaHidden = 'false';
     }
 
     quizProgress.ariaValueNow = 75;
@@ -184,6 +233,8 @@ nextButton3.onclick = () => {
 backButton2.onclick = () => {
     document.getElementById('quiz-content').style.display = 'none';
     document.getElementById('quiz-basics').style.display = 'block';
+    document.getElementById('quiz-content').ariaHidden = 'true';
+    document.getElementById('quiz-basics').ariaHidden = 'false';
 
     quizProgress.ariaValueNow = 0;
     quizProgress.style.width = '0%';
@@ -192,6 +243,8 @@ backButton2.onclick = () => {
 backButton3.onclick = () => {
     document.getElementById('quiz-audience').style.display = 'none';
     document.getElementById('quiz-content').style.display = 'block';
+    document.getElementById('quiz-audience').ariaHidden = 'true';
+    document.getElementById('quiz-content').ariaHidden = 'false';
 
     quizProgress.ariaValueNow = 25;
     quizProgress.style.width = '25%';
@@ -200,6 +253,8 @@ backButton3.onclick = () => {
 backButton4.onclick = () => {
     document.getElementById('quiz-feel').style.display = 'none';
     document.getElementById('quiz-audience').style.display = 'block';
+    document.getElementById('quiz-feel').ariaHidden = 'true';
+    document.getElementById('quiz-audience').ariaHidden = 'false';
 
     quizProgress.ariaValueNow = 25;
     quizProgress.style.width = '50%';
@@ -792,16 +847,32 @@ const display = () => {
     if(simpleComplicated === '' || boldUnderstated === '' || modernClassic === '' || funSerious === '') {
         if (simpleComplicated === '') {
             document.getElementById('simple_complicated_error').style.visibility = 'visible';
-        } else {document.getElementById('simple_complicated_error').style.visibility = 'hidden';}
+            document.getElementById('simple_complicated_error').ariaHidden = 'true';
+        } else {
+            document.getElementById('simple_complicated_error').style.visibility = 'hidden';
+            document.getElementById('simple_complicated_error').ariaHidden = 'false';
+        }
         if (boldUnderstated === '') {
             document.getElementById('bold_understated_error').style.visibility = 'visible';
-        } else {document.getElementById('bold_understated_error').style.visibility = 'hidden';}
+            document.getElementById('bold_understated_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('bold_understated_error').style.visibility = 'hidden';
+            document.getElementById('bold_understated_error').ariaHidden = 'true';
+        }
         if (modernClassic === '') {
             document.getElementById('modern_classic_error').style.visibility = 'visible';
-        } else {document.getElementById('modern_classic_error').style.visibility = 'hidden';}
+            document.getElementById('modern_classic_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('modern_classic_error').style.visibility = 'hidden';
+            document.getElementById('modern_classic_error').ariaHidden = 'true';
+        }
         if (funSerious === '') {
             document.getElementById('fun_serious_error').style.visibility = 'visible';
-        } else {document.getElementById('fun_serious_error').style.visibility = 'hidden';}
+            document.getElementById('fun_serious_error').ariaHidden = 'false';
+        } else {
+            document.getElementById('fun_serious_error').style.visibility = 'hidden';
+            document.getElementById('fun_serious_error').ariaHidden = 'true';
+        }
 
         
     } else {
@@ -809,6 +880,10 @@ const display = () => {
         document.getElementById('bold_understated_error').style.visibility = 'hidden';
         document.getElementById('modern_classic_error').style.visibility = 'hidden';
         document.getElementById('fun_serious_error').style.visibility = 'hidden';
+        document.getElementById('simple_complicated_error').ariaHidden = 'true';
+        document.getElementById('bold_understated_error').ariaHidden = 'true';
+        document.getElementById('modern_classic_error').ariaHidden = 'true';
+        document.getElementById('fun_serious_error').ariaHidden = 'true';
 
         if(document.forms['site_quiz']['simple_complicated'].value === "complicated") {
             complicated = true;
@@ -850,8 +925,12 @@ const display = () => {
         document.getElementById("style-guide").style.display = 'block';
         document.getElementById("quiz-intro").style.display = 'block';
         document.getElementById('results-arrow').style.display = 'flex';
+        document.getElementById("style-guide").ariaHidden = 'false';
+        document.getElementById("quiz-intro").ariaHidden = 'false';
+        document.getElementById('results-arrow').ariaHidden = 'false';
         document.getElementById('style-guide-heading').scrollTop = document.getElementById('style-guide-heading').offsetTop;
         document.getElementById('quiz-container').style.display='none';
+        document.getElementById('quiz-container').ariaHidden='true';
     }
 }
 

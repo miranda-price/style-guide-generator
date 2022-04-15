@@ -10,7 +10,7 @@
 <body class="container-fluid">
     <header class="container-fluid">
         <div id="hero" class="carousel slide" data-bs-ride="carousel">
-            <div id="dot-div" style="display: none;">
+            <div id="dot-div" style="display: none;" aria-hidden="true">
                 <div class="dots" id="dot01"></div>
                 <div class="dots" id="dot02"></div>
                 <div class="dots" id="dot03"></div>
@@ -58,7 +58,7 @@
     
     </header>
 
-    <div id="quiz-intro" style="display: none;">
+    <div id="quiz-intro" style="display: none;" aria-hidden="true">
         <div id="quiz-intro-inner">
             <h2 id="quiz-heading">Create a Site Design</h2>
             <h3 id="quiz-desc">Take a few minutes to tell us about your site and we’ll create a site design that works for you.</h3>
@@ -71,7 +71,7 @@
         
     </div>
 
-<div class="container quiz" id="quiz-container" style="display: none;">
+<div class="container quiz" id="quiz-container" style="display: none;" aria-hidden="true">
     <div class="quiz-header">
         <h2>Design Guide | Quiz</h2>
         <div class="progress" style="height: 20px;">
@@ -145,12 +145,12 @@
                 <input class="form-check-input" type="radio" id="other" name="site_subject" value="other">
                 <label class="form-check-label" for="other">Other</label>
             </div>
-            <p class="error" id="site_subject_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="site_subject_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <img src="./icons/arrow-right-circle-fill.svg" id="page1-next" class="next-button" role="button">
         </div>
 
-        <div class="form-page" id="quiz-content" style="display: none;">
+        <div class="form-page" id="quiz-content" style="display: none;" aria-hidden="true">
             <h3>Site Content:</h3>
             <h4>Amount of Content:</h4>
             <div class="form-check">
@@ -173,7 +173,7 @@
                 <input class="form-check-input" type="radio" id="content_5" name="content_amount" value="content_5">
                 <label class="form-check-label" for="content_5">Packed with content</label>
             </div>
-            <p class="error" id="content_amount_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="content_amount_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <h4>Media or Text:</h4>
             <div class="form-check">
@@ -188,7 +188,7 @@
                 <input class="form-check-input" type="radio" id="content_text" name="content_type" value="content_text">
                 <label class="form-check-label" for="content_text">Mostly text</label>
             </div>
-            <p class="error" id="content_type_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="content_type_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <h4>Level of Interactivity:</h4>
             <div class="form-check">
@@ -203,13 +203,13 @@
                 <input class="form-check-input" type="radio" id="lot_buttons" name="interactivity" value="lot_buttons">
                 <label class="form-check-label" for="lot_buttons">A lot of buttons</label>
             </div>
-            <p class="error" id="interactivity_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="interactivity_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <img src="./icons/arrow-left-circle-fill.svg" id="page2-back" class="back-button" role="button">
             <img src="./icons/arrow-right-circle-fill.svg" id="page2-next" class="next-button" role="button">
         </div>
 
-        <div class="form-page" id="quiz-audience" style="display: none;">
+        <div class="form-page" id="quiz-audience" style="display: none;" aria-hidden="true">
             <h3>Site Audience:</h3>
             <h4>Main audience age:</h4>
             <div class="form-check">
@@ -220,7 +220,7 @@
                 <input class="form-check-input" type="radio" id="old" name="audience_age" value="old">
                 <label class="form-check-label" for="old">Over 30</label>
             </div>
-            <p class="error" id="audience_age_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="audience_age_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <h4>Most important emotion to convey:</h4>
             <div class="form-check">
@@ -247,7 +247,7 @@
                 <input class="form-check-input" type="radio" id="trustworthy_primary" name="mood_primary" value="trustworthy_primary">
                 <label class="form-check-label" for="trustworthy_primary">Trustworthy</label>
             </div>
-            <p class="error" id="mood_primary_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="mood_primary_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <h4>Second Most important emotion to convey:</h4>
             <div class="form-check">
@@ -274,13 +274,13 @@
                 <input class="form-check-input" type="radio" id="trustworthy_secondary" name="mood_secondary" value="trustworthy_secondary">
                 <label class="form-check-label" for="trustworthy_secondary">Trustworthy</label>
             </div>
-            <p class="error" id="mood_secondary_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="mood_secondary_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <img src="./icons/arrow-left-circle-fill.svg" id="page3-back" class="back-button" role="button">
             <img src="./icons/arrow-right-circle-fill.svg" id="page3-next" class="next-button" role="button">
         </div>
 
-        <div class="form-page" id="quiz-feel" style="display: none;">
+        <div class="form-page" id="quiz-feel" style="display: none;" aria-hidden="true">
             <h3>Site Feel:</h3>
             <h4>Simple or Complicated:</h4>
             <div class="form-check-inline">
@@ -291,7 +291,7 @@
                 <input class="form-check-input" type="radio" id="complicated" name="simple_complicated" value="complicated">
                 <label class="form-check-label" for="complicated">Complicated</label>
             </div>
-            <p class="error" id="simple_complicated_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="simple_complicated_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <h4>Bold or Understated:</h4>
             <div class="form-check-inline">
@@ -302,7 +302,7 @@
                 <input class="form-check-input" type="radio" id="understated" name="bold_understated" value="understated">
                 <label class="form-check-label" for="understated">Understated</label>
             </div>
-            <p class="error" id="bold_understated_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="bold_understated_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <h4>Modern or Classic:</h4>
             <div class="form-check-inline">
@@ -313,7 +313,7 @@
                 <input class="form-check-input" type="radio" id="classic" name="modern_classic" value="classic">
                 <label class="form-check-label" for="classic">Classic</label>
             </div>
-            <p class="error" id="modern_classic_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="modern_classic_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <h4>Fun or Serious:</h4>
             <div class="form-check-inline">
@@ -324,7 +324,7 @@
                 <input class="form-check-input" type="radio" id="serious" name="fun_serious" value="serious">
                 <label class="form-check-label" for="serious">Serious</label>
             </div>
-            <p class="error" id="fun_serious_error" style="visibility: hidden;">Answer required question</p>
+            <p class="error" id="fun_serious_error" style="visibility: hidden;" aria-hidden="true">Answer required question</p>
 
             <img src="./icons/arrow-left-circle-fill.svg" id="page4-back" class="back-button" role="button">
             <button type="submit" class="btn btn-primary mb-3" id="quiz-finish">Finish</button>
@@ -494,7 +494,7 @@
   </div>   
 </div>
 
-<div id="style-guide" class="grid-container", style="display: none;">
+<div id="style-guide" class="grid-container", style="display: none;" aria-hidden="true">
     <div class="info flex-space">
         <h2 id="style-guide-heading">Style Guide</h2>
         <button class="btn btn-link" id="what-style-guide" data-bs-toggle="modal" data-bs-target="#what-info-box">What is a Style Guide?</button>
