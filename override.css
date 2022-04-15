@@ -29,9 +29,9 @@
 
 h4 {font-size: 20px;}
 
-.form-check-input:checked, #quiz-finish {
-  background-color: #ef7627;
-  border-color: #ef7627;
+.form-check-input:checked {
+  background-color: #212529;
+  border-color: #212529;
 }
 
 #hero, #quiz-intro {
@@ -81,6 +81,8 @@ form > img {
   height: auto;
 }
 
+form > img:hover {opacity: 80%;}
+
 .grid-container, .container {
   width: 80%;
   margin: 0 auto;
@@ -128,7 +130,7 @@ form > img {
 
 .form-page h4, .form-page h3 {
   margin-top: 15px;
-  color: #d62900;
+  color: #b55690;
   font-weight: bold;
 }
 
@@ -152,6 +154,7 @@ form > img {
   position: fixed;
   bottom: 2vh;
   right: 13vw;
+  background-color: #a50062;
 }
 
 .palette {
@@ -171,6 +174,18 @@ form > img {
 
 .info {
   display: flex;
+}
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress {width: 50%;}
+
+.progress-bar {
+  background-color: #ef7627;
 }
 
 .info-button {
