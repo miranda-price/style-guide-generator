@@ -81,8 +81,6 @@ form > img {
   height: auto;
 }
 
-form > img:hover {opacity: 80%;}
-
 .grid-container, .container {
   width: 80%;
   margin: 0 auto;
@@ -180,7 +178,10 @@ form > img:hover {opacity: 80%;}
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 50px;
 }
+
+#style-guide {padding: 50px 0;}
 
 .progress {width: 50%;}
 
