@@ -92,8 +92,32 @@ form > img {
 }
 
 #quiz-intro {
-  background-color:#a50062;
+  background-color:#ff9b55;
+  color: #212529;
 }
+
+#take-quiz {
+  background-color: #a50062;
+  border: none;
+}
+
+.vert-stack {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  width: min-content;
+  align-content: center;
+  top: 50vh;
+  left: 0;
+  width: 100%;
+}
+
+.vert-stack img {
+  width: 32px;
+  margin: 0 auto;
+}
+
+.vert-stack p {margin: 0;}
 
 .form-page {
   height: 100vh;

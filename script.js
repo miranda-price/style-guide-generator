@@ -846,6 +846,7 @@ const display = () => {
         //iconGen();
         document.getElementById("style-guide").style.display = 'block';
         document.getElementById("quiz-intro").style.display = 'block';
+        document.getElementById('results-arrow').style.display = 'flex';
         document.getElementById('style-guide-heading').scrollTop = document.getElementById('style-guide-heading').offsetTop;
         document.getElementById('quiz-container').style.display='none';
     }
