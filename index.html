@@ -391,92 +391,111 @@
   </div>   
 </div>
 
+<div class="modal fade" id="what-info-box" tabindex="-1" aria-labelledby="what-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="what-modal">What is a Style Guide?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <strong><p>A style guide is a document that outlines all design elements for a brand, site, app, or anything else that needs a cohesive design based on specific brand and user needs.</p></strong>
+            <p>This site takes the information you gave about your site's type, topic, content, audience, and general feel and uses an algorithm to produce a currated style guide featuring colors, fonts, and buttons, along with their uses.</p>
+            <p>In short, this is a design guide designed for non-designers.</p>
+            <p>For professional style guides, more detail is better.  However, this site's results are structured to reflect how to customize a site's design using Wix</p>
+            <p>More in-depth style guides can also include layout, form elements, language and tone, images, icons, and logos, but that is beyond the scope of this site for the time being.</p>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+
+<div class="modal fade" id="how-info-box" tabindex="-1" aria-labelledby="how-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="how-modal">How to Use Your Style Guide</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <strong><p>How to turn your results into a beautiful Wix website</p></strong>
+            <em><p>Note: These instructions are specific to Wix, but general principles can be applied to other website builders like Foursquare, Weebly, and Wordpress</p></em>
+            <div class="accordion" id="how-to-use">
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="for-colors-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#for-colors" aria-expanded="false" aria-controls="for-colors">
+                    For Colors:
+                    </button>
+                </h2>
+                <div id="for-colors" class="accordion-collapse collapse" aria-labelledby="for-colors-heading" data-bs-parent="#how-to-use">
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Open the Wix editor for your site</li>
+                            <li>On the left sidebar, click the "Site Design" option</li>
+                            <li>Hover over the "Color & Text Theme" box and click "Customize"</li>
+                            <li>Click the "Colors" button</li>
+                            <li>Click the leftmost color box for Color 1</li>
+                            <li>Halfway down the color picker popup you'll see a tab that says Hex.  Once that tab is selected, copy and paste the hex code (six digit code preceeded by a '#' next to the color name on the style guide)</li>
+                            <li>Click apply to finalize the change</li>
+                            <li>Repeat for colors 2-5</li>
+                        </ol>
+                    </div>
+                </div>
+                </div>
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="for-fonts-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#for-fonts" aria-expanded="false" aria-controls="for-fonts">
+                    For Fonts:
+                    </button>
+                </h2>
+                <div id="for-fonts" class="accordion-collapse collapse" aria-labelledby="for-fonts-heading" data-bs-parent="#how-to-use">
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Open the Wix editor for your site</li>
+                            <li>On the left sidebar, click the "Site Design" option</li>
+                            <li>Hover over the "Color & Text Theme" box and click "Customize"</li>
+                            <li>Click the "Text" button</li>
+                            <li>Hover over the "Text Theme" box and click "Change"</li>
+                            <li>Scroll through the featured text themes and find the one that matches the heading and paragraph fonts listed. (Hint: the text theme will be titled after the heading font, and the paragraph font will be the first listed in the description.</li>
+                            <li>Click the box for the proper text theme, changes are automatic</li>
+                            <li>Click the back button to return to the main text customization section.</li>
+                            <li>Below the "Text Theme" box are all the heading and paragraph styles.  For each heading and paragraph section, click the pencil "Edit" icon to the right and change the font size, underlining, and italics to match the style guide.</li>
+                        </ol>
+                    </div>
+                </div>
+                </div>
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="for-buttons-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#for-buttons" aria-expanded="false" aria-controls="for-buttons">
+                    For Buttons:
+                    </button>
+                </h2>
+                <div id="for-buttons" class="accordion-collapse collapse" aria-labelledby="for-buttons-heading" data-bs-parent="#how-to-use">
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Open the Wix editor for your site</li>
+                            <li>Click on the button that you wish to change</li>
+                            <li>Click the paintbrush "Design" icon</li>
+                            <li>At the bottom of the popup, click the "Customize Design" button</li>
+                            <li>Change the background fill, text, borders, corners (border-radius), and shadow sections to match the style guide based on the button's use (primary, secondary, or tertiary)</li>
+                        </ol>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+
 <div id="style-guide" class="grid-container", style="display: none;">
     <div class="info">
         <h2 id="style-guide-heading">Style Guide</h2>
-        <button class="btn btn-link" id="what-style-guide">What is a Style Guide?</button>
-        <button class="btn btn-link" id="how-style-guide">How to Use</button>
+        <button class="btn btn-link" id="what-style-guide" data-bs-toggle="modal" data-bs-target="#what-info-box">What is a Style Guide?</button>
+        <button class="btn btn-link" id="how-style-guide" data-bs-toggle="modal" data-bs-target="#how-info-box">How to Use</button>
     </div>
     <hr>
-
-    <div class="info-box" id="what-info-box" style="display: none;">
-        <img src="./icons/x-circle-fill.svg" id="what-x" class="x-icon">
-        <h3>What is a Style Guide?</h3>
-        <strong><p>A style guide is a document that outlines all design elements for a brand, site, app, or anything else that needs a cohesive design based on specific brand and user needs.</p></strong>
-        <p>This site takes the information you gave about your site's type, topic, content, audience, and general feel and uses an algorithm to produce a currated style guide featuring colors, fonts, and buttons, along with their uses.</p>
-        <p>In short, this is a design guide designed for non-designers.</p>
-        <p>For professional style guides, more detail is better.  However, this site's results are structured to reflect how to customize a site's design using Wix (<button class="btn btn-link" id="how-use-style-guide">learn more here</button>)</p>
-        <p>More in-depth style guides can also include layout, form elements, language and tone, images, icons, and logos, but that is beyond the scope of this site for the time being.</p>
-    </div>
-    <div class="info-box" id="how-info-box" style="display: none;">
-        <img src="./icons/x-circle-fill.svg" id="how-x" class="x-icon">
-        <h3>How to Use your Style Guide</h3>
-        <strong><p>How to turn your results into a beautiful Wix website</p></strong>
-        <em><p>Note: These instructions are specific to Wix, but general principles can be applied to other website builders like Foursquare, Weebly, and Wordpress</p></em>
-        <div class="accordion" id="how-to-use">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="for-colors-heading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#for-colors" aria-expanded="false" aria-controls="for-colors">
-                  For Colors:
-                </button>
-              </h2>
-              <div id="for-colors" class="accordion-collapse collapse" aria-labelledby="for-colors-heading" data-bs-parent="#how-to-use">
-                <div class="accordion-body">
-                    <ol>
-                        <li>Open the Wix editor for your site</li>
-                        <li>On the left sidebar, click the "Site Design" option</li>
-                        <li>Hover over the "Color & Text Theme" box and click "Customize"</li>
-                        <li>Click the "Colors" button</li>
-                        <li>Click the leftmost color box for Color 1</li>
-                        <li>Halfway down the color picker popup you'll see a tab that says Hex.  Once that tab is selected, copy and paste the hex code (six digit code preceeded by a '#' next to the color name on the style guide)</li>
-                        <li>Click apply to finalize the change</li>
-                        <li>Repeat for colors 2-5</li>
-                    </ol>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="for-fonts-heading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#for-fonts" aria-expanded="false" aria-controls="for-fonts">
-                  For Fonts:
-                </button>
-              </h2>
-              <div id="for-fonts" class="accordion-collapse collapse" aria-labelledby="for-fonts-heading" data-bs-parent="#how-to-use">
-                <div class="accordion-body">
-                    <ol>
-                        <li>Open the Wix editor for your site</li>
-                        <li>On the left sidebar, click the "Site Design" option</li>
-                        <li>Hover over the "Color & Text Theme" box and click "Customize"</li>
-                        <li>Click the "Text" button</li>
-                        <li>Hover over the "Text Theme" box and click "Change"</li>
-                        <li>Scroll through the featured text themes and find the one that matches the heading and paragraph fonts listed. (Hint: the text theme will be titled after the heading font, and the paragraph font will be the first listed in the description.</li>
-                        <li>Click the box for the proper text theme, changes are automatic</li>
-                        <li>Click the back button to return to the main text customization section.</li>
-                        <li>Below the "Text Theme" box are all the heading and paragraph styles.  For each heading and paragraph section, click the pencil "Edit" icon to the right and change the font size, underlining, and italics to match the style guide.</li>
-                    </ol>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="for-buttons-heading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#for-buttons" aria-expanded="false" aria-controls="for-buttons">
-                  For Buttons:
-                </button>
-              </h2>
-              <div id="for-buttons" class="accordion-collapse collapse" aria-labelledby="for-buttons-heading" data-bs-parent="#how-to-use">
-                <div class="accordion-body">
-                    <ol>
-                        <li>Open the Wix editor for your site</li>
-                        <li>Click on the button that you wish to change</li>
-                        <li>Click the paintbrush "Design" icon</li>
-                        <li>At the bottom of the popup, click the "Customize Design" button</li>
-                        <li>Change the background fill, text, borders, corners (border-radius), and shadow sections to match the style guide based on the button's use (primary, secondary, or tertiary)</li>
-                    </ol>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
 
     <div class="row">
         <div id="colorDiv" class="col-md-7">

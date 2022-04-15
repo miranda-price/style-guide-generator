@@ -856,39 +856,6 @@ newPalette.onclick = () => {
     colorGen();
 };
 
-// explain style guide
-    // display explanations
-const whatStyleGuide = document.getElementById('what-style-guide');
-const howStyleGuide = document.getElementById('how-style-guide');
-const howStyleGuide2 = document.getElementById('how-use-style-guide');
-
-whatStyleGuide.onclick = () => {
-    document.getElementById('what-info-box').style.display = 'block';
-    document.getElementById('how-info-box').style.display = 'none';
-}
-
-howStyleGuide.onclick = () => {
-    document.getElementById('what-info-box').style.display = 'none';
-    document.getElementById('how-info-box').style.display = 'block';
-}
-
-howStyleGuide2.onclick = () => {
-    document.getElementById('what-info-box').style.display = 'none';
-    document.getElementById('how-info-box').style.display = 'block';
-}
-
-    // hide explanations
-const whatStyleGuideX = document.getElementById('what-x');
-const howStyleGuideX = document.getElementById('how-x');
-
-whatStyleGuideX.onclick = () => {
-    document.getElementById('what-info-box').style.display = 'none';
-}
-
-howStyleGuideX.onclick = () => {
-    document.getElementById('how-info-box').style.display = 'none';
-}
-
 // explain results
     // display results
 const colorInfo = document.getElementById('color-info');
