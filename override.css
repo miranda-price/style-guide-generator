@@ -198,6 +198,10 @@ form > img {
   margin-left: min(12%, 100px);
 }
 
+#button1, #button2, #button3 {
+  min-height: 60px;
+}
+
 @media (max-width: 767px) {
   .form-page {
     width: 90%;

@@ -675,6 +675,7 @@ const buttonGen = () => {
     // primary button
     buttonPrimary.style.borderRadius = borderRadius;
     buttonPrimary.style.backgroundColor = color3;
+    document.getElementById('button1').style.backgroundColor = color1;
     buttonPrimary.style.border = 'none';
     buttonPrimary.style.boxShadow = '0px 4px 4px rgba(0, 0, 0, 0.25)';
     buttonPrimary.style.fontFamily = buttonFont;
@@ -683,6 +684,7 @@ const buttonGen = () => {
     // secondary button
     buttonSecondary.style.borderRadius = borderRadius;
     buttonSecondary.style.color = color2;
+    document.getElementById('button2').style.backgroundColor = color1;
     buttonSecondary.style.border = `1px solid ${color2}`;
     buttonSecondary.style.boxShadow = '0px 4px 4px rgba(0, 0, 0, 0.25)';
     buttonSecondary.style.fontFamily = buttonFont;
@@ -690,6 +692,7 @@ const buttonGen = () => {
 
     // tertiary button
     buttonTertiary.style.color = color2;
+    document.getElementById('button3').style.backgroundColor = color1;
     buttonDescTertiary.innerHTML = `No fill or border, drop shadow, 36px ${buttonFont} ${color2}, underlined`
     buttonTertiary.style.fontFamily = buttonFont;
 }
