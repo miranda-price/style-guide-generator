@@ -962,24 +962,19 @@ colorInfo.onclick = () => {
     else {document.getElementById('color-explanation').innerHTML = `${primaryColor.charAt(0).toUpperCase() + primaryColor.slice(1)} is a very ${moodSecondary.replace('_secondary', '')} color, which matches your site's secondary emotion`;}
 
     if (palettePattern === 'triadic') {
-        if (darkMode) {document.getElementById('palette-guide').src = './img/palette_guides_triadic-dark.svg';}
-        else {document.getElementById('palette-guide').src = './img/palette_guides_triadic-light.svg';}
+        document.getElementById('palette-guide').src = './img/palette_guides_triadic-light.svg';
         document.getElementById('pattern-explanation').innerHTML = `Triadic palettes are based on three colors equally spaced on the color wheel (see diagram).  Triadic palettes are seen as energetic and cheerful.`;
     } else if (palettePattern === 'split') {
-        if (darkMode) {document.getElementById('palette-guide').src = './img/palette_guides_split-dark.svg';}
-        else {document.getElementById('palette-guide').src = './img/palette_guides_split-light.svg';}
+        document.getElementById('palette-guide').src = './img/palette_guides_split-light.svg';
         document.getElementById('pattern-explanation').innerHTML = `Split-complementary palettes are based on an main color and two neighboring colors on the opposite side of the color wheel (see diagram).  Split-complementary palettes are seen as bold and somewhat complex, while also adding a fun, playful feel to a design.`;
     } else if (palettePattern === 'complementary') {
-        if (darkMode) {document.getElementById('palette-guide').src = './img/palette_guides_complementary-dark.svg';}
-        else {document.getElementById('palette-guide').src = './img/palette_guides_complementary-light.svg';}
+        document.getElementById('palette-guide').src = './img/palette_guides_complementary-light.svg';
         document.getElementById('pattern-explanation').innerHTML = `Complementary palettes are based on two colors that are opposite each other on the color wheel (see diagram).  Complementary palettes are seen as bold, while still relatively simple.`;
     } else if (palettePattern === 'analogous') {
-        if (darkMode) {document.getElementById('palette-guide').src = './img/palette_guides_analogous-dark.svg';}
-        else {document.getElementById('palette-guide').src = './img/palette_guides_analogous-light.svg';}
+        document.getElementById('palette-guide').src = './img/palette_guides_analogous-light.svg';
         document.getElementById('pattern-explanation').innerHTML = `Analogous palettes are based on three colors located next to each other on the color wheel (see diagram).  Analogous palettes are seen as calming.`;
     } else {
-        if (darkMode) {document.getElementById('palette-guide').src = './img/palette_guides_monochromatic-dark.svg';}
-        else {document.getElementById('palette-guide').src = './img/palette_guides_monochromatic-light.svg';}
+        document.getElementById('palette-guide').src = './img/palette_guides_monochromatic-light.svg';
         document.getElementById('pattern-explanation').innerHTML = `Monochromatic palettes are all based on the same color (see diagram).  Monochromatic palettes are seen as sophisticated and serious, but realistically work well for just about any design.`;
     }
 
